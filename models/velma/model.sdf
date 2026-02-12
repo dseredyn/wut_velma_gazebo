@@ -1,0 +1,4206 @@
+<sdf version='1.11'>
+  <model name='velma'>
+    <self_collide>true</self_collide>
+    <joint name='torso_base_joint' type='fixed'>
+      <pose relative_to='__model__'>0 0 0 0 0 0</pose>
+      <parent>world</parent>
+      <child>torso_base</child>
+    </joint>
+    <link name='torso_base'>
+      <pose relative_to='torso_base_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 -0.059999999999999991 0.1302970297029703 0 0 0</pose>
+        <mass>30.300000000000001</mass>
+        <inertia>
+          <ixx>0.93201732673267335</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.93201732673267335</iyy>
+          <iyz>0</iyz>
+          <izz>1.3634999999999999</izz>
+        </inertia>
+      </inertial>
+      <collision name='torso_base_collision'>
+        <pose>0 0 0.10000000000000001 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.69999999999999996 0.80000000000000004 0.20000000000000001</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='torso_base_collision_1'>
+        <pose>0 0 0.26000000000000001 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.40000000000000002 0.40000000000000002 0.12</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='torso_base_fixed_joint_lump__head_bounding_sphere_collision_2'>
+        <pose>0.040000000000000001 0 1.6299999999999999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.23000000000000001</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='torso_base_visual'>
+        <pose>0 0 0.10000000000000001 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.69999999999999996 0.80000000000000004 0.20000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
+        </material>
+      </visual>
+      <visual name='torso_base_visual_1'>
+        <pose>0 0 0.26000000000000001 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.40000000000000002 0.40000000000000002 0.12</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='torso_0_joint' type='revolute'>
+      <pose relative_to='torso_base'>0 0 0.029999999999999999 0 0 0</pose>
+      <parent>torso_base</parent>
+      <child>torso_link0</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5700000000000001</lower>
+          <upper>1.5700000000000001</upper>
+          <effort>100</effort>
+          <velocity>0.52359877559829882</velocity>
+        </limit>
+        <dynamics>
+          <damping>10</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='torso_link0'>
+      <pose relative_to='torso_0_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>5.4404695315835049e-05 -0.052465146043167571 0.26912860456343218 0 0 0</pose>
+        <mass>34.399999999999999</mass>
+        <inertia>
+          <ixx>7.7582217833401774</ixx>
+          <ixy>-7.8558081405175599e-05</ixy>
+          <ixz>-0.0024888526176257502</ixz>
+          <iyy>7.736382652981213</iyy>
+          <iyz>-0.24588330009771131</iyz>
+          <izz>1.381030085015382</izz>
+        </inertia>
+      </inertial>
+      <collision name='torso_link0_collision'>
+        <pose>0 0 0.96857002258299996 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.30822044610999999 0.276354163885 0.45334654808000002</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='torso_link0_collision_1'>
+        <pose>0 0 1.1842557191800001 0.78539816339744839 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.31669688224800002 0.19 0.19</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='torso_link0_collision_2'>
+        <pose>-0.026510979980200002 0 0.50596773624400004 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.35316127538699998 0.25581598281899998 0.5</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='torso_link0_fixed_joint_lump__head_base_collision_3'>
+        <pose>0.010500000000000001 -0.001 1.3117000000000001 0.00040339000000000016 -0.0062724000000000018 -0.048944000000000001</pose>
+        <geometry>
+          <box>
+            <size>0.244826734066 0.069836191832999994 0.055938005447399998</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='torso_link0_visual'>
+        <pose>0 0 0.52000000000000002 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/collision/torso0_collision.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.5 0.5 0.5 1</ambient>
+        </material>
+      </visual>
+      <visual name='torso_link0_fixed_joint_lump__head_base_visual_1'>
+        <pose>0.010500000000000001 -0.001 1.3117000000000001 0.00040339000000000016 -0.0062724000000000018 -0.048944000000000001</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/head_base_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.625 0.625 0.625 1</diffuse>
+          <ambient>0.625 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+      <visual name='torso_link0_fixed_joint_lump__head_pan_motor_visual_2'>
+        <pose>0.01034288543166437 -0.0010024008792015951 1.336699506180087 0.00040339000000000016 -0.0062724000000000018 -0.048944000000000001</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/head_pan_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.625 0.625 0.625 1</diffuse>
+          <ambient>0.625 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+      <visual name='torso_link0_fixed_joint_lump__calib_left_arm_base_link_visual_3'>
+        <pose>-0.00059999999999999995 -0.001311324 1.1733499999999999 0.00087013424996696829 1.0475048897873585 1.572425482653163</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/base_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='torso_link0_fixed_joint_lump__calib_right_arm_base_link_visual_4'>
+        <pose>-0.00040000000000000002 -0.00088867600000000003 1.1733499999999999 -0.00044935495417241101 -1.0474715456733603 1.5704709495574307</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/base_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='head_pan_joint' type='revolute'>
+      <pose relative_to='torso_link0'>0.0099532413021920074 -0.0010083550596215499 1.3986982815067019 0.00040339000000000016 -0.0062724000000000018 -0.048944000000000001</pose>
+      <parent>torso_link0</parent>
+      <child>head_pan_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5700000000000001</lower>
+          <upper>1.5700000000000001</upper>
+          <effort>100</effort>
+          <velocity>1.5700000000000001</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.10000000000000001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='head_pan_link'>
+      <pose relative_to='head_pan_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.0625 0 0 0</pose>
+        <mass>0.20000000000000001</mass>
+        <inertia>
+          <ixx>0.00052083333333300004</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00052083333333300004</iyy>
+          <iyz>0</iyz>
+          <izz>0.00052083333333300004</izz>
+        </inertia>
+      </inertial>
+      <visual name='head_pan_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/head_tilt_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.625 0.625 0.625 1</diffuse>
+          <ambient>0.625 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='head_tilt_joint' type='revolute'>
+      <pose relative_to='head_pan_link'>0 0 0.048000000000000001 0 0 0</pose>
+      <parent>head_pan_link</parent>
+      <child>head_tilt_link_dummy</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1</lower>
+          <upper>1.3</upper>
+          <effort>100</effort>
+          <velocity>100</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.10000000000000001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='head_tilt_link_dummy'>
+      <pose relative_to='head_tilt_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 -0.0625 1.7704809055149939e-17 0 0 0</pose>
+        <mass>0.20000000000000001</mass>
+        <inertia>
+          <ixx>0.00052083333333299993</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00052083333333300004</iyy>
+          <iyz>0</iyz>
+          <izz>0.00052083333333299993</izz>
+        </inertia>
+      </inertial>
+      <visual name='head_tilt_link_dummy_fixed_joint_lump__head_tilt_link_visual'>
+        <pose>0 -0.042189999999999998 6.9388939039072284e-18 1.5707963267948959 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/head_top_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.625 0.625 0.625 1</diffuse>
+          <ambient>0.625 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+      <visual name='head_tilt_link_dummy_fixed_joint_lump__head_tilt_link_visual_1'>
+        <pose>0 -0.042189999999999998 6.9388939039072284e-18 1.5707963267948959 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/collision/head_top_collision.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_arm_0_joint' type='revolute'>
+      <pose relative_to='torso_link0'>-0.0006595107150774265 0.093968362960686336 1.228320698659817 0.00087013424996696829 1.0475048897873585 1.572425482653163</pose>
+      <parent>torso_link0</parent>
+      <child>left_arm_1_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.9670597283903599</lower>
+          <upper>2.9670597283903599</upper>
+          <effort>204</effort>
+          <velocity>1.919862177193763</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_arm_1_link'>
+      <pose relative_to='left_arm_0_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 -0.059999999999999998 0.13 0 0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.013666666666666671</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0030000000000000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.011866666666666669</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_arm_1_link_collision'>
+        <pose>0 0 0.033573299646399997 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.072999999999999995</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_1_link_collision_1'>
+        <pose>0 -0.031707510352100003 0.19376248121299999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.072999999999999995</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_1_link_collision_2'>
+        <pose>0 -0.029846340417899998 0.11576515436199999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.070000000000000007</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_arm_1_link_visual'>
+        <pose>0 0 -0.0080000000000000002 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/link_1_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_arm_1_joint' type='revolute'>
+      <pose relative_to='left_arm_1_link'>0 0 0.20050000000000001 0 0 0</pose>
+      <parent>left_arm_1_link</parent>
+      <child>left_arm_2_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-2.0943951023931948</lower>
+          <upper>2.0943951023931948</upper>
+          <effort>306</effort>
+          <velocity>1.919862177193763</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_arm_2_link'>
+      <pose relative_to='left_arm_1_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0.059999999999999998 0.070000000000000007 0 0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.013666666666666671</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0030000000000000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.011866666666666669</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_arm_2_link_collision'>
+        <pose>0 0.028657019138299999 0.00607386231422 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.073999999999999996</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_2_link_collision_1'>
+        <pose>0 0.0015062838792799999 0.15980343520599999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.068573892116500001</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_2_link_collision_2'>
+        <pose>0 0.019763633608799999 0.064111046493099996 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.069514483213399994</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_2_link_collision_3'>
+        <pose>0 0.0098852068185799995 0.10453104972799999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.064563155174300002</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_arm_2_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/link_2_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_arm_2_joint' type='revolute'>
+      <pose relative_to='left_arm_2_link'>0 0 0.20000000000000001 0 0 0</pose>
+      <parent>left_arm_2_link</parent>
+      <child>left_arm_3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.9670597283903599</lower>
+          <upper>2.9670597283903599</upper>
+          <effort>204</effort>
+          <velocity>2.268928027592628</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_arm_3_link'>
+      <pose relative_to='left_arm_2_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0.059999999999999998 0.13 0 0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.013666666666666671</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0030000000000000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.011866666666666669</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_arm_3_link_collision'>
+        <pose>0 0.031416490674 0.19712650775900001 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.0721492171288</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_3_link_collision_1'>
+        <pose>0 0 0.043976649642000001 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.0721492171288</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_3_link_collision_2'>
+        <pose>0 0.028056353330600001 0.14490649104100001 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.064754813909499997</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_3_link_collision_3'>
+        <pose>0 0.011217728257200001 0.097590506076800004 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.064754813909499997</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_arm_3_link_visual'>
+        <pose>0 0 -0.0080000000000000002 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/link_3_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_arm_3_joint' type='revolute'>
+      <pose relative_to='left_arm_3_link'>0 0 0.20000000000000001 0 0 0</pose>
+      <parent>left_arm_3_link</parent>
+      <child>left_arm_4_link</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-2.0943951023931948</lower>
+          <upper>2.0943951023931948</upper>
+          <effort>306</effort>
+          <velocity>2.268928027592628</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_arm_4_link'>
+      <pose relative_to='left_arm_3_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 -0.059999999999999998 0.070000000000000007 0 0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.013666666666666671</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0030000000000000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.011866666666666669</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_arm_4_link_collision'>
+        <pose>0 -0.032630354165999999 0.0038600713014599998 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.072881460189800004</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_4_link_collision_1'>
+        <pose>0 0 0.16161605715800001 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.0689925551414</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_4_link_collision_2'>
+        <pose>0 -0.024966612458200001 0.0531955659389 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.066763907671000003</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_4_link_collision_3'>
+        <pose>0 -0.0114624202251 0.101935714483 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.066763907671000003</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_arm_4_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/link_4_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_arm_4_joint' type='revolute'>
+      <pose relative_to='left_arm_4_link'>0 0 0.20000000000000001 0 0 0</pose>
+      <parent>left_arm_4_link</parent>
+      <child>left_arm_5_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.9670597283903599</lower>
+          <upper>2.9670597283903599</upper>
+          <effort>204</effort>
+          <velocity>2.268928027592628</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_arm_5_link'>
+      <pose relative_to='left_arm_4_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.124 0 0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.012650666666666669</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0030000000000000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.01085066666666667</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_arm_5_link_collision'>
+        <pose>0 -0.026199743151700001 0.18765720725099999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.074113309383399995</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_5_link_collision_1'>
+        <pose>0 0 0.045123420655699999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.069810807704900002</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_5_link_collision_2'>
+        <pose>0 -0.0117612332106 0.087862916290799994 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.064437448978399994</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_5_link_collision_3'>
+        <pose>0 -0.0240273177624 0.14248637855099999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.069366157054899999</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_arm_5_link_visual'>
+        <pose>0 0 -0.0080000000000000002 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/link_5_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_arm_5_joint' type='revolute'>
+      <pose relative_to='left_arm_5_link'>0 0 0.19 0 0 0</pose>
+      <parent>left_arm_5_link</parent>
+      <child>left_arm_6_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-2.0943951023931948</lower>
+          <upper>2.0943951023931948</upper>
+          <effort>306</effort>
+          <velocity>3.1415926535897931</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_arm_6_link'>
+      <pose relative_to='left_arm_5_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.0625 0 0 0</pose>
+        <mass>0.20000000000000001</mass>
+        <inertia>
+          <ixx>0.00052083333333333333</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00052083333333333333</iyy>
+          <iyz>0</iyz>
+          <izz>0.00052083333333333333</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_arm_6_link_collision'>
+        <pose>0 0.0055913925170899999 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.080592721700700004</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_arm_6_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/link_6_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_arm_6_joint' type='revolute'>
+      <pose relative_to='left_arm_6_link'>0 0 0.078 0 0 0</pose>
+      <parent>left_arm_6_link</parent>
+      <child>left_arm_7_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.9670597283903599</lower>
+          <upper>2.9670597283903599</upper>
+          <effort>204</effort>
+          <velocity>3.1415926535897931</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='left_arm_7_link'>
+      <pose relative_to='left_arm_6_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.053980109705112259 -3.1283663132585571e-05 -0.031138864463235608 0 0 0</pose>
+        <mass>0.29121249999999999</mass>
+        <inertia>
+          <ixx>0.00107688600367251</ixx>
+          <ixy>-3.400746911344874e-09</ixy>
+          <ixz>-0.00056961000631143197</ixz>
+          <iyy>0.001706179006691331</iyy>
+          <iyz>-1.9617484611140298e-09</iyz>
+          <izz>0.001273901340293896</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_arm_7_link_fixed_joint_lump__left_gripper_mount_link_collision'>
+        <pose>-0.0084889810532299999 1.0396003474860649e-18 0.022174596786499998 0 0 3.1415926535897931</pose>
+        <geometry>
+          <box>
+            <size>0.110316336155 0.079585358500499997 0.049765706062299998</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_7_link_fixed_joint_lump__left_gripper_mount_link_collision_1'>
+        <pose>-0.083875276148299996 1.0271758846261589e-17 -0.011706233024600001 -9.0613977180591793e-33 0.82284924118200053 3.1415926535897931</pose>
+        <geometry>
+          <box>
+            <size>0.068020761013000003 0.079585358500499997 0.025487780570999999</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_arm_7_link_fixed_joint_lump__left_gripper_mount_link_collision_2'>
+        <pose>-0.10250060260299999 1.255270348884388e-17 -0.079121701419400003 0 0 3.1415926535897931</pose>
+        <geometry>
+          <box>
+            <size>0.018733859062200001 0.081628940999499994 0.100000023842</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_arm_7_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/link_7_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <visual name='left_arm_7_link_fixed_joint_lump__left_gripper_mount_link_visual_1'>
+        <pose>0 0 0 0 0 3.1415926535897931</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/gripper_mount_simplified.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='left_arm_7_link_fixed_joint_lump__black_box1_visual_2'>
+        <pose>-0.01 -0.0099999999999999985 0.02 0 0 3.1415926535897931</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='left_arm_7_link_fixed_joint_lump__black_box2_visual_3'>
+        <pose>0.01 0.0099999999999999985 0.02 0 0 3.1415926535897931</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='left_arm_7_link_fixed_joint_lump__white_box1_visual_4'>
+        <pose>-0.0099999999999999985 0.01 0.02 0 0 3.1415926535897931</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='left_arm_7_link_fixed_joint_lump__white_box2_visual_5'>
+        <pose>0.0099999999999999985 -0.01 0.02 0 0 3.1415926535897931</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='leftKeepUprightJoint0' type='revolute'>
+      <pose relative_to='left_arm_7_link'>0 0 0 0 0 0</pose>
+      <parent>left_arm_7_link</parent>
+      <child>left_keepUprightLink1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.1415926535897931</lower>
+          <upper>3.1415926535897931</upper>
+          <effort>10</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_keepUprightLink1'>
+      <pose relative_to='leftKeepUprightJoint0'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>5.2083333333300001e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.2083333333300001e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5.2083333333300001e-06</izz>
+        </inertia>
+      </inertial>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='leftKeepUprightJoint1' type='revolute'>
+      <pose relative_to='left_keepUprightLink1'>0 0 0 0 1.5707963267948966 0</pose>
+      <parent>left_keepUprightLink1</parent>
+      <child>left_keepUprightLink2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.1415926535897931</lower>
+          <upper>3.1415926535897931</upper>
+          <effort>10</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_keepUprightLink2'>
+      <pose relative_to='leftKeepUprightJoint1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>5.2083333333300001e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.2083333333300001e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5.2083333333300001e-06</izz>
+        </inertia>
+      </inertial>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='leftFtSensorJoint' type='revolute'>
+      <pose relative_to='left_arm_7_link'>-0.115 1.4083438190194562e-17 -0.078 -3.1415926535897931 1.5707963267948966 0</pose>
+      <parent>left_arm_7_link</parent>
+      <child>left_FtSensorLink</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.0000000000000001e-05</upper>
+          <effort>10</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='left_FtSensorLink'>
+      <pose relative_to='leftFtSensorJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.00035112039272241818 0.0049355163822662144 0.054039236172400529 0 0 0</pose>
+        <mass>0.64052874999999998</mass>
+        <inertia>
+          <ixx>0.0010579344469971109</ixx>
+          <ixy>7.7622647582099046e-06</ixy>
+          <ixz>1.2052412501888441e-05</ixz>
+          <iyy>0.00084935292021662344</iyy>
+          <iyz>0.0001454011718167654</iyz>
+          <izz>0.00069694160518216932</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_FtSensorLink_fixed_joint_lump__left_HandPalmLink_collision'>
+        <pose>0 0 0.034000000000000002 0 0 3.1415926535897931</pose>
+        <geometry>
+          <sphere>
+            <radius>0.049000000000000002</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_FtSensorLink_fixed_joint_lump__left_HandPalmLink_collision_1'>
+        <pose>0 0 0.062888016104700004 0 0 3.1415926535897931</pose>
+        <geometry>
+          <box>
+            <size>0.090526044368700001 0.054620765149600001 0.042063474655200002</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_FtSensorLink_fixed_joint_lump__left_HandPalmLink_collision_2'>
+        <pose>4.7183240926490498e-18 0.038528040051499998 0.062268917560599997 0 0 3.1415926535897931</pose>
+        <geometry>
+          <box>
+            <size>0.027581036090899999 0.054620765149600001 0.033937454223599998</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_FtSensorLink_fixed_joint_lump__left_HandPalmLink_collision_3'>
+        <pose>5.974145733533101e-18 0.048782601952600001 0.079481427669500004 0 0 3.1415926535897931</pose>
+        <geometry>
+          <sphere>
+            <radius>0.019439905881900001</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_FtSensorLink_fixed_joint_lump__left_HandPalmLink_visual'>
+        <pose>0 0 0.0050000000000000001 0 0 3.1415926535897931</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/palm.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 1 1</diffuse>
+          <ambient>0 0 1 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_HandFingerOneKnuckleOneJoint' type='revolute'>
+      <pose relative_to='left_FtSensorLink'>-0.024969999999999999 3.0579430574709408e-18 0.063796599999999995 0 0 -1.570796326794897</pose>
+      <parent>left_FtSensorLink</parent>
+      <child>left_HandFingerOneKnuckleOneLink</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>3.1415926535897931</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.10000000000000001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='left_HandFingerOneKnuckleOneLink'>
+      <pose relative_to='left_HandFingerOneKnuckleOneJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.032016660000000002 -0.00086501999999999998 0.0089007500000000007 0 0 0</pose>
+        <mass>0.16252678000000001</mass>
+        <inertia>
+          <ixx>2.567e-05</ixx>
+          <ixy>-1.46e-06</ixy>
+          <ixz>1.128e-05</ixz>
+          <iyy>8.8179999999999999e-05</iyy>
+          <iyz>-9.4e-07</iyz>
+          <izz>7.8269999999999994e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_HandFingerOneKnuckleOneLink_collision'>
+        <pose>0.027079880237599999 0 0.00195854902267 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.075225532054899999 0.027877636253799999 0.036258101463300003</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_HandFingerOneKnuckleOneLink_collision_1'>
+        <pose>0.049324281513699997 0 0.015054658055299999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.019604086875900002</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_HandFingerOneKnuckleOneLink_visual'>
+        <pose>0 0 -0.0044999999999999997 1.5707963267948959 5.5511151231257827e-17 -1.5707963267948959</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/firstFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_HandFingerOneKnuckleTwoJoint' type='revolute'>
+      <pose relative_to='left_HandFingerOneKnuckleOneLink'>0.050000000000000003 0 0.016603400000000001 -1.5707963267948959 0 0</pose>
+      <parent>left_HandFingerOneKnuckleOneLink</parent>
+      <child>left_HandFingerOneKnuckleTwoLink</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>2.443388889</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='left_HandFingerOneKnuckleTwoLink'>
+      <pose relative_to='left_HandFingerOneKnuckleTwoJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.031719999999999998 0.00107 -0.00058600000000000004 0 0 0</pose>
+        <mass>0.057957000000000002</mass>
+        <inertia>
+          <ixx>4.6099999999999999e-06</ixx>
+          <ixy>2.9999999999999997e-08</ixy>
+          <ixz>1.64e-06</ixz>
+          <iyy>3.5899999999999998e-05</iyy>
+          <iyz>4.0000000000000001e-08</iyz>
+          <izz>3.6820000000000003e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_HandFingerOneKnuckleTwoLink_collision'>
+        <pose>0.045531850308199999 0 0 0 0 0.042407715357800004</pose>
+        <geometry>
+          <box>
+            <size>0.0572708845139 0.025990553200199999 0.0224001407623</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_HandFingerOneKnuckleTwoLink_visual'>
+        <pose>0 0 0 3.1415926535897931 1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/secondFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_HandFingerOneKnuckleThreeJoint' type='revolute'>
+      <pose relative_to='left_HandFingerOneKnuckleTwoLink'>0.070000000000000007 0 0 0 0 -0.69045225200000004</pose>
+      <parent>left_HandFingerOneKnuckleTwoLink</parent>
+      <child>left_HandFingerOneKnuckleThreeLink</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.83773333299999997</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='left_HandFingerOneKnuckleThreeLink'>
+      <pose relative_to='left_HandFingerOneKnuckleThreeJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.01970974 0.0018201599999999999 0.00020040999999999999 0 0 0</pose>
+        <mass>0.034217810000000001</mass>
+        <inertia>
+          <ixx>4.6099999999999999e-06</ixx>
+          <ixy>2.9999999999999997e-08</ixy>
+          <ixz>1.64e-06</ixz>
+          <iyy>3.5899999999999998e-05</iyy>
+          <iyz>4.0000000000000001e-08</iyz>
+          <izz>3.6820000000000003e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_HandFingerOneKnuckleThreeLink_collision'>
+        <pose>0.022046357393299999 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.045631229877499999 0.0218328088522 0.022742033004799999</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_HandFingerOneKnuckleThreeLink_collision_1'>
+        <pose>0.046044960618000001 0.001 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.012090086937</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_HandFingerOneKnuckleThreeLink_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/thirdFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_HandFingerThreeKnuckleTwoJoint' type='revolute'>
+      <pose relative_to='left_FtSensorLink'>6.1232339957367663e-18 0.050000000000000003 0.080399999999999999 -1.5707963267948957 0 1.570796326794897</pose>
+      <parent>left_FtSensorLink</parent>
+      <child>left_HandFingerThreeKnuckleTwoLink</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>2.443388889</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='left_HandFingerThreeKnuckleTwoLink'>
+      <pose relative_to='left_HandFingerThreeKnuckleTwoJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.031719999999999998 0.00107 -0.00058600000000000004 0 0 0</pose>
+        <mass>0.057957000000000002</mass>
+        <inertia>
+          <ixx>4.6099999999999999e-06</ixx>
+          <ixy>2.9999999999999997e-08</ixy>
+          <ixz>1.64e-06</ixz>
+          <iyy>3.5899999999999998e-05</iyy>
+          <iyz>4.0000000000000001e-08</iyz>
+          <izz>3.6820000000000003e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_HandFingerThreeKnuckleTwoLink_collision'>
+        <pose>0.045531850308199999 0 0 0 0 0.042407715357800004</pose>
+        <geometry>
+          <box>
+            <size>0.0572708845139 0.025990553200199999 0.0224001407623</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_HandFingerThreeKnuckleTwoLink_visual'>
+        <pose>0 0 0 3.1415926535897931 1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/secondFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_HandFingerThreeKnuckleThreeJoint' type='revolute'>
+      <pose relative_to='left_HandFingerThreeKnuckleTwoLink'>0.070000000000000007 0 0 0 0 -0.69045225200000004</pose>
+      <parent>left_HandFingerThreeKnuckleTwoLink</parent>
+      <child>left_HandFingerThreeKnuckleThreeLink</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.83773333299999997</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='left_HandFingerThreeKnuckleThreeLink'>
+      <pose relative_to='left_HandFingerThreeKnuckleThreeJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.01970974 0.0018201599999999999 0.00020040999999999999 0 0 0</pose>
+        <mass>0.034217810000000001</mass>
+        <inertia>
+          <ixx>4.6099999999999999e-06</ixx>
+          <ixy>2.9999999999999997e-08</ixy>
+          <ixz>1.64e-06</ixz>
+          <iyy>3.5899999999999998e-05</iyy>
+          <iyz>4.0000000000000001e-08</iyz>
+          <izz>3.6820000000000003e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_HandFingerThreeKnuckleThreeLink_collision'>
+        <pose>0.022046357393299999 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.045631229877499999 0.0218328088522 0.022742033004799999</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_HandFingerThreeKnuckleThreeLink_collision_1'>
+        <pose>0.046044960618000001 0.001 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.012090086937</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_HandFingerThreeKnuckleThreeLink_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/thirdFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_HandFingerTwoKnuckleOneJoint' type='revolute'>
+      <pose relative_to='left_FtSensorLink'>0.024969999999999999 -3.0579430574709408e-18 0.063796599999999995 0 0 -1.570796326794897</pose>
+      <parent>left_FtSensorLink</parent>
+      <child>left_HandFingerTwoKnuckleOneLink</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>3.1415926535897931</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.10000000000000001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='left_HandFingerTwoKnuckleOneLink'>
+      <pose relative_to='left_HandFingerTwoKnuckleOneJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.032016660000000002 -0.00086501999999999998 0.0089007500000000007 0 0 0</pose>
+        <mass>0.16252678000000001</mass>
+        <inertia>
+          <ixx>2.567e-05</ixx>
+          <ixy>-1.46e-06</ixy>
+          <ixz>1.128e-05</ixz>
+          <iyy>8.8179999999999999e-05</iyy>
+          <iyz>-9.4e-07</iyz>
+          <izz>7.8269999999999994e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_HandFingerTwoKnuckleOneLink_collision'>
+        <pose>0.027079880237599999 0 0.00195854902267 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.075225532054899999 0.027877636253799999 0.036258101463300003</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_HandFingerTwoKnuckleOneLink_collision_1'>
+        <pose>0.049324281513699997 0 0.015054658055299999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.019604086875900002</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_HandFingerTwoKnuckleOneLink_visual'>
+        <pose>0 0 -0.0044999999999999997 1.5707963267948959 5.5511151231257827e-17 -1.5707963267948959</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/firstFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_HandFingerTwoKnuckleTwoJoint' type='revolute'>
+      <pose relative_to='left_HandFingerTwoKnuckleOneLink'>0.050000000000000003 0 0.016603400000000001 -1.5707963267948959 0 0</pose>
+      <parent>left_HandFingerTwoKnuckleOneLink</parent>
+      <child>left_HandFingerTwoKnuckleTwoLink</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>2.443388889</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='left_HandFingerTwoKnuckleTwoLink'>
+      <pose relative_to='left_HandFingerTwoKnuckleTwoJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.031719999999999998 0.00107 -0.00058600000000000004 0 0 0</pose>
+        <mass>0.057957000000000002</mass>
+        <inertia>
+          <ixx>4.6099999999999999e-06</ixx>
+          <ixy>2.9999999999999997e-08</ixy>
+          <ixz>1.64e-06</ixz>
+          <iyy>3.5899999999999998e-05</iyy>
+          <iyz>4.0000000000000001e-08</iyz>
+          <izz>3.6820000000000003e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_HandFingerTwoKnuckleTwoLink_collision'>
+        <pose>0.045531850308199999 0 0 0 0 0.042407715357800004</pose>
+        <geometry>
+          <box>
+            <size>0.0572708845139 0.025990553200199999 0.0224001407623</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_HandFingerTwoKnuckleTwoLink_visual'>
+        <pose>0 0 0 3.1415926535897931 1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/secondFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='left_HandFingerTwoKnuckleThreeJoint' type='revolute'>
+      <pose relative_to='left_HandFingerTwoKnuckleTwoLink'>0.070000000000000007 0 0 0 0 -0.69045225200000004</pose>
+      <parent>left_HandFingerTwoKnuckleTwoLink</parent>
+      <child>left_HandFingerTwoKnuckleThreeLink</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.83773333299999997</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='left_HandFingerTwoKnuckleThreeLink'>
+      <pose relative_to='left_HandFingerTwoKnuckleThreeJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.01970974 0.0018201599999999999 0.00020040999999999999 0 0 0</pose>
+        <mass>0.034217810000000001</mass>
+        <inertia>
+          <ixx>4.6099999999999999e-06</ixx>
+          <ixy>2.9999999999999997e-08</ixy>
+          <ixz>1.64e-06</ixz>
+          <iyy>3.5899999999999998e-05</iyy>
+          <iyz>4.0000000000000001e-08</iyz>
+          <izz>3.6820000000000003e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_HandFingerTwoKnuckleThreeLink_collision'>
+        <pose>0.022046357393299999 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.045631229877499999 0.0218328088522 0.022742033004799999</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='left_HandFingerTwoKnuckleThreeLink_collision_1'>
+        <pose>0.046044960618000001 0.001 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.012090086937</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_HandFingerTwoKnuckleThreeLink_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/thirdFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_arm_0_joint' type='revolute'>
+      <pose relative_to='torso_link0'>-0.00048043028405509141 -0.096166505790609591 1.228323890906148 -0.00044935495417241101 -1.0474715456733603 1.5704709495574307</pose>
+      <parent>torso_link0</parent>
+      <child>right_arm_1_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.9670597283903599</lower>
+          <upper>2.9670597283903599</upper>
+          <effort>204</effort>
+          <velocity>1.919862177193763</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_arm_1_link'>
+      <pose relative_to='right_arm_0_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 -0.059999999999999998 0.13 0 0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.013666666666666671</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0030000000000000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.011866666666666669</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_arm_1_link_collision'>
+        <pose>0 0 0.033573299646399997 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.072999999999999995</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_1_link_collision_1'>
+        <pose>0 -0.031707510352100003 0.19376248121299999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.072999999999999995</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_1_link_collision_2'>
+        <pose>0 -0.029846340417899998 0.11576515436199999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.070000000000000007</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_arm_1_link_visual'>
+        <pose>0 0 -0.0080000000000000002 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/link_1_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_arm_1_joint' type='revolute'>
+      <pose relative_to='right_arm_1_link'>0 0 0.20050000000000001 0 0 0</pose>
+      <parent>right_arm_1_link</parent>
+      <child>right_arm_2_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-2.0943951023931948</lower>
+          <upper>2.0943951023931948</upper>
+          <effort>306</effort>
+          <velocity>1.919862177193763</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_arm_2_link'>
+      <pose relative_to='right_arm_1_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0.059999999999999998 0.070000000000000007 0 0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.013666666666666671</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0030000000000000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.011866666666666669</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_arm_2_link_collision'>
+        <pose>0 0.028657019138299999 0.00607386231422 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.073999999999999996</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_2_link_collision_1'>
+        <pose>0 0.0015062838792799999 0.15980343520599999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.068573892116500001</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_2_link_collision_2'>
+        <pose>0 0.019763633608799999 0.064111046493099996 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.069514483213399994</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_2_link_collision_3'>
+        <pose>0 0.0098852068185799995 0.10453104972799999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.064563155174300002</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_arm_2_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/link_2_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_arm_2_joint' type='revolute'>
+      <pose relative_to='right_arm_2_link'>0 0 0.20000000000000001 0 0 0</pose>
+      <parent>right_arm_2_link</parent>
+      <child>right_arm_3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.9670597283903599</lower>
+          <upper>2.9670597283903599</upper>
+          <effort>204</effort>
+          <velocity>2.268928027592628</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_arm_3_link'>
+      <pose relative_to='right_arm_2_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0.059999999999999998 0.13 0 0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.013666666666666671</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0030000000000000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.011866666666666669</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_arm_3_link_collision'>
+        <pose>0 0.031416490674 0.19712650775900001 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.0721492171288</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_3_link_collision_1'>
+        <pose>0 0 0.043976649642000001 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.0721492171288</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_3_link_collision_2'>
+        <pose>0 0.028056353330600001 0.14490649104100001 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.064754813909499997</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_3_link_collision_3'>
+        <pose>0 0.011217728257200001 0.097590506076800004 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.064754813909499997</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_arm_3_link_visual'>
+        <pose>0 0 -0.0080000000000000002 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/link_3_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_arm_3_joint' type='revolute'>
+      <pose relative_to='right_arm_3_link'>0 0 0.20000000000000001 0 0 0</pose>
+      <parent>right_arm_3_link</parent>
+      <child>right_arm_4_link</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-2.0943951023931948</lower>
+          <upper>2.0943951023931948</upper>
+          <effort>306</effort>
+          <velocity>2.268928027592628</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_arm_4_link'>
+      <pose relative_to='right_arm_3_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 -0.059999999999999998 0.070000000000000007 0 0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.013666666666666671</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0030000000000000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.011866666666666669</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_arm_4_link_collision'>
+        <pose>0 -0.032630354165999999 0.0038600713014599998 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.072881460189800004</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_4_link_collision_1'>
+        <pose>0 0 0.16161605715800001 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.0689925551414</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_4_link_collision_2'>
+        <pose>0 -0.024966612458200001 0.0531955659389 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.066763907671000003</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_4_link_collision_3'>
+        <pose>0 -0.0114624202251 0.101935714483 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.066763907671000003</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_arm_4_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/link_4_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_arm_4_joint' type='revolute'>
+      <pose relative_to='right_arm_4_link'>0 0 0.20000000000000001 0 0 0</pose>
+      <parent>right_arm_4_link</parent>
+      <child>right_arm_5_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.9670597283903599</lower>
+          <upper>2.9670597283903599</upper>
+          <effort>204</effort>
+          <velocity>2.268928027592628</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_arm_5_link'>
+      <pose relative_to='right_arm_4_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.124 0 0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.012650666666666669</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0030000000000000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.01085066666666667</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_arm_5_link_collision'>
+        <pose>0 -0.026199743151700001 0.18765720725099999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.074113309383399995</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_5_link_collision_1'>
+        <pose>0 0 0.045123420655699999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.069810807704900002</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_5_link_collision_2'>
+        <pose>0 -0.0117612332106 0.087862916290799994 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.064437448978399994</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_5_link_collision_3'>
+        <pose>0 -0.0240273177624 0.14248637855099999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.069366157054899999</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_arm_5_link_visual'>
+        <pose>0 0 -0.0080000000000000002 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/link_5_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_arm_5_joint' type='revolute'>
+      <pose relative_to='right_arm_5_link'>0 0 0.19 0 0 0</pose>
+      <parent>right_arm_5_link</parent>
+      <child>right_arm_6_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-2.0943951023931948</lower>
+          <upper>2.0943951023931948</upper>
+          <effort>306</effort>
+          <velocity>3.1415926535897931</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_arm_6_link'>
+      <pose relative_to='right_arm_5_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.0625 0 0 0</pose>
+        <mass>0.20000000000000001</mass>
+        <inertia>
+          <ixx>0.00052083333333333333</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00052083333333333333</iyy>
+          <iyz>0</iyz>
+          <izz>0.00052083333333333333</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_arm_6_link_collision'>
+        <pose>0 0.0055913925170899999 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.080592721700700004</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_arm_6_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/link_6_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_arm_6_joint' type='revolute'>
+      <pose relative_to='right_arm_6_link'>0 0 0.078 0 0 0</pose>
+      <parent>right_arm_6_link</parent>
+      <child>right_arm_7_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.9670597283903599</lower>
+          <upper>2.9670597283903599</upper>
+          <effort>204</effort>
+          <velocity>3.1415926535897931</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='right_arm_7_link'>
+      <pose relative_to='right_arm_6_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.053980109705112259 3.1283663132592178e-05 -0.031138864463235608 0 0 0</pose>
+        <mass>0.29121249999999999</mass>
+        <inertia>
+          <ixx>0.00107688600367251</ixx>
+          <ixy>-3.400746911421954e-09</ixy>
+          <ixz>0.00056961000631143197</ixz>
+          <iyy>0.001706179006691331</iyy>
+          <iyz>1.9617484611838571e-09</iyz>
+          <izz>0.001273901340293896</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_arm_7_link_fixed_joint_lump__right_gripper_mount_link_collision'>
+        <pose>0.0084889810532299999 0 0.022174596786499998 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.110316336155 0.079585358500499997 0.049765706062299998</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_7_link_fixed_joint_lump__right_gripper_mount_link_collision_1'>
+        <pose>0.083875276148299996 0 -0.011706233024600001 0 0.82284924118200053 0</pose>
+        <geometry>
+          <box>
+            <size>0.068020761013000003 0.079585358500499997 0.025487780570999999</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_arm_7_link_fixed_joint_lump__right_gripper_mount_link_collision_2'>
+        <pose>0.10250060260299999 0 -0.079121701419400003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.018733859062200001 0.081628940999499994 0.100000023842</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_arm_7_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/lwr/link_7_simplified.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <visual name='right_arm_7_link_fixed_joint_lump__right_gripper_mount_link_visual_1'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/gripper_mount_simplified.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='right_arm_7_link_fixed_joint_lump__right_gripper_mount_link_visual_2'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/imu_case_right.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 0.608749986 0 1</diffuse>
+          <ambient>1 0.608749986 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='right_arm_7_link_fixed_joint_lump__black_box1_visual_3'>
+        <pose>0.01 0.01 0.050000000000000003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='right_arm_7_link_fixed_joint_lump__black_box2_visual_4'>
+        <pose>-0.01 -0.01 0.050000000000000003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='right_arm_7_link_fixed_joint_lump__white_box1_visual_5'>
+        <pose>0.01 -0.01 0.050000000000000003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='right_arm_7_link_fixed_joint_lump__white_box2_visual_6'>
+        <pose>-0.01 0.01 0.050000000000000003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.0050000000000000001</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='rightKeepUprightJoint0' type='revolute'>
+      <pose relative_to='right_arm_7_link'>0 0 0 0 0 0</pose>
+      <parent>right_arm_7_link</parent>
+      <child>right_keepUprightLink1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.1415926535897931</lower>
+          <upper>3.1415926535897931</upper>
+          <effort>10</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_keepUprightLink1'>
+      <pose relative_to='rightKeepUprightJoint0'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>5.2083333333300001e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.2083333333300001e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5.2083333333300001e-06</izz>
+        </inertia>
+      </inertial>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='rightKeepUprightJoint1' type='revolute'>
+      <pose relative_to='right_keepUprightLink1'>0 0 0 0 1.5707963267948966 0</pose>
+      <parent>right_keepUprightLink1</parent>
+      <child>right_keepUprightLink2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.1415926535897931</lower>
+          <upper>3.1415926535897931</upper>
+          <effort>10</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_keepUprightLink2'>
+      <pose relative_to='rightKeepUprightJoint1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>5.2083333333300001e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.2083333333300001e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5.2083333333300001e-06</izz>
+        </inertia>
+      </inertial>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='rightFtSensorJoint' type='revolute'>
+      <pose relative_to='right_arm_7_link'>0.115 0 -0.078 0 1.5707963267948966 0</pose>
+      <parent>right_arm_7_link</parent>
+      <child>right_FtSensorLink</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.0000000000000001e-05</upper>
+          <effort>10</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='right_FtSensorLink'>
+      <pose relative_to='rightFtSensorJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00035112039272241878 -0.0049355163822662144 0.054039236172400529 0 0 0</pose>
+        <mass>0.64052874999999998</mass>
+        <inertia>
+          <ixx>0.0010579344469971109</ixx>
+          <ixy>7.7622647582099317e-06</ixy>
+          <ixz>-1.205241250188842e-05</ixz>
+          <iyy>0.00084935292021662344</iyy>
+          <iyz>-0.0001454011718167654</iyz>
+          <izz>0.00069694160518216932</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_FtSensorLink_fixed_joint_lump__right_HandPalmLink_collision'>
+        <pose>0 0 0.034000000000000002 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.049000000000000002</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_FtSensorLink_fixed_joint_lump__right_HandPalmLink_collision_1'>
+        <pose>0 0 0.062888016104700004 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.090526044368700001 0.054620765149600001 0.042063474655200002</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_FtSensorLink_fixed_joint_lump__right_HandPalmLink_collision_2'>
+        <pose>0 -0.038528040051499998 0.062268917560599997 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.027581036090899999 0.054620765149600001 0.033937454223599998</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_FtSensorLink_fixed_joint_lump__right_HandPalmLink_collision_3'>
+        <pose>0 -0.048782601952600001 0.079481427669500004 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.019439905881900001</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_FtSensorLink_fixed_joint_lump__right_HandPalmLink_visual'>
+        <pose>0 0 0.0050000000000000001 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/palm.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 1 1</diffuse>
+          <ambient>0 0 1 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_HandFingerOneKnuckleOneJoint' type='revolute'>
+      <pose relative_to='right_FtSensorLink'>0.024969999999999999 0 0.063796599999999995 0 0 1.5707963267948959</pose>
+      <parent>right_FtSensorLink</parent>
+      <child>right_HandFingerOneKnuckleOneLink</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>3.1415926535897931</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.10000000000000001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='right_HandFingerOneKnuckleOneLink'>
+      <pose relative_to='right_HandFingerOneKnuckleOneJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.032016660000000002 -0.00086501999999999998 0.0089007500000000007 0 0 0</pose>
+        <mass>0.16252678000000001</mass>
+        <inertia>
+          <ixx>2.567e-05</ixx>
+          <ixy>-1.46e-06</ixy>
+          <ixz>1.128e-05</ixz>
+          <iyy>8.8179999999999999e-05</iyy>
+          <iyz>-9.4e-07</iyz>
+          <izz>7.8269999999999994e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_HandFingerOneKnuckleOneLink_collision'>
+        <pose>0.027079880237599999 0 0.00195854902267 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.075225532054899999 0.027877636253799999 0.036258101463300003</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_HandFingerOneKnuckleOneLink_collision_1'>
+        <pose>0.049324281513699997 0 0.015054658055299999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.019604086875900002</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_HandFingerOneKnuckleOneLink_visual'>
+        <pose>0 0 -0.0044999999999999997 1.5707963267948959 5.5511151231257827e-17 -1.5707963267948959</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/firstFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_HandFingerOneKnuckleTwoJoint' type='revolute'>
+      <pose relative_to='right_HandFingerOneKnuckleOneLink'>0.050000000000000003 0 0.016603400000000001 -1.5707963267948959 0 0</pose>
+      <parent>right_HandFingerOneKnuckleOneLink</parent>
+      <child>right_HandFingerOneKnuckleTwoLink</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>2.443388889</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='right_HandFingerOneKnuckleTwoLink'>
+      <pose relative_to='right_HandFingerOneKnuckleTwoJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.031719999999999998 0.00107 -0.00058600000000000004 0 0 0</pose>
+        <mass>0.057957000000000002</mass>
+        <inertia>
+          <ixx>4.6099999999999999e-06</ixx>
+          <ixy>2.9999999999999997e-08</ixy>
+          <ixz>1.64e-06</ixz>
+          <iyy>3.5899999999999998e-05</iyy>
+          <iyz>4.0000000000000001e-08</iyz>
+          <izz>3.6820000000000003e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_HandFingerOneKnuckleTwoLink_collision'>
+        <pose>0.045531850308199999 0 0 0 0 0.042407715357800004</pose>
+        <geometry>
+          <box>
+            <size>0.0572708845139 0.025990553200199999 0.0224001407623</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_HandFingerOneKnuckleTwoLink_visual'>
+        <pose>0 0 0 3.1415926535897931 1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/secondFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_HandFingerOneKnuckleThreeJoint' type='revolute'>
+      <pose relative_to='right_HandFingerOneKnuckleTwoLink'>0.070000000000000007 0 0 0 0 -0.69045225200000004</pose>
+      <parent>right_HandFingerOneKnuckleTwoLink</parent>
+      <child>right_HandFingerOneKnuckleThreeLink</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.83773333299999997</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='right_HandFingerOneKnuckleThreeLink'>
+      <pose relative_to='right_HandFingerOneKnuckleThreeJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.01970974 0.0018201599999999999 0.00020040999999999999 0 0 0</pose>
+        <mass>0.034217810000000001</mass>
+        <inertia>
+          <ixx>4.6099999999999999e-06</ixx>
+          <ixy>2.9999999999999997e-08</ixy>
+          <ixz>1.64e-06</ixz>
+          <iyy>3.5899999999999998e-05</iyy>
+          <iyz>4.0000000000000001e-08</iyz>
+          <izz>3.6820000000000003e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_HandFingerOneKnuckleThreeLink_collision'>
+        <pose>0.022046357393299999 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.045631229877499999 0.0218328088522 0.022742033004799999</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_HandFingerOneKnuckleThreeLink_collision_1'>
+        <pose>0.046044960618000001 0.001 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.012090086937</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_HandFingerOneKnuckleThreeLink_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/thirdFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_HandFingerThreeKnuckleTwoJoint' type='revolute'>
+      <pose relative_to='right_FtSensorLink'>0 -0.050000000000000003 0.080399999999999999 -1.5707963267948959 -5.5511151231257827e-17 -1.5707963267948959</pose>
+      <parent>right_FtSensorLink</parent>
+      <child>right_HandFingerThreeKnuckleTwoLink</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>2.443388889</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='right_HandFingerThreeKnuckleTwoLink'>
+      <pose relative_to='right_HandFingerThreeKnuckleTwoJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.031719999999999998 0.00107 -0.00058600000000000004 0 0 0</pose>
+        <mass>0.057957000000000002</mass>
+        <inertia>
+          <ixx>4.6099999999999999e-06</ixx>
+          <ixy>2.9999999999999997e-08</ixy>
+          <ixz>1.64e-06</ixz>
+          <iyy>3.5899999999999998e-05</iyy>
+          <iyz>4.0000000000000001e-08</iyz>
+          <izz>3.6820000000000003e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_HandFingerThreeKnuckleTwoLink_collision'>
+        <pose>0.045531850308199999 0 0 0 0 0.042407715357800004</pose>
+        <geometry>
+          <box>
+            <size>0.0572708845139 0.025990553200199999 0.0224001407623</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_HandFingerThreeKnuckleTwoLink_visual'>
+        <pose>0 0 0 3.1415926535897931 1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/secondFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_HandFingerThreeKnuckleThreeJoint' type='revolute'>
+      <pose relative_to='right_HandFingerThreeKnuckleTwoLink'>0.070000000000000007 0 0 0 0 -0.69045225200000004</pose>
+      <parent>right_HandFingerThreeKnuckleTwoLink</parent>
+      <child>right_HandFingerThreeKnuckleThreeLink</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.83773333299999997</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='right_HandFingerThreeKnuckleThreeLink'>
+      <pose relative_to='right_HandFingerThreeKnuckleThreeJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.01970974 0.0018201599999999999 0.00020040999999999999 0 0 0</pose>
+        <mass>0.034217810000000001</mass>
+        <inertia>
+          <ixx>4.6099999999999999e-06</ixx>
+          <ixy>2.9999999999999997e-08</ixy>
+          <ixz>1.64e-06</ixz>
+          <iyy>3.5899999999999998e-05</iyy>
+          <iyz>4.0000000000000001e-08</iyz>
+          <izz>3.6820000000000003e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_HandFingerThreeKnuckleThreeLink_collision'>
+        <pose>0.022046357393299999 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.045631229877499999 0.0218328088522 0.022742033004799999</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_HandFingerThreeKnuckleThreeLink_collision_1'>
+        <pose>0.046044960618000001 0.001 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.012090086937</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_HandFingerThreeKnuckleThreeLink_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/thirdFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_HandFingerTwoKnuckleOneJoint' type='revolute'>
+      <pose relative_to='right_FtSensorLink'>-0.024969999999999999 0 0.063796599999999995 0 0 1.5707963267948959</pose>
+      <parent>right_FtSensorLink</parent>
+      <child>right_HandFingerTwoKnuckleOneLink</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>3.1415926535897931</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.10000000000000001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='right_HandFingerTwoKnuckleOneLink'>
+      <pose relative_to='right_HandFingerTwoKnuckleOneJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.032016660000000002 -0.00086501999999999998 0.0089007500000000007 0 0 0</pose>
+        <mass>0.16252678000000001</mass>
+        <inertia>
+          <ixx>2.567e-05</ixx>
+          <ixy>-1.46e-06</ixy>
+          <ixz>1.128e-05</ixz>
+          <iyy>8.8179999999999999e-05</iyy>
+          <iyz>-9.4e-07</iyz>
+          <izz>7.8269999999999994e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_HandFingerTwoKnuckleOneLink_collision'>
+        <pose>0.027079880237599999 0 0.00195854902267 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.075225532054899999 0.027877636253799999 0.036258101463300003</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_HandFingerTwoKnuckleOneLink_collision_1'>
+        <pose>0.049324281513699997 0 0.015054658055299999 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.019604086875900002</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_HandFingerTwoKnuckleOneLink_visual'>
+        <pose>0 0 -0.0044999999999999997 1.5707963267948959 5.5511151231257827e-17 -1.5707963267948959</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/firstFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_HandFingerTwoKnuckleTwoJoint' type='revolute'>
+      <pose relative_to='right_HandFingerTwoKnuckleOneLink'>0.050000000000000003 0 0.016603400000000001 -1.5707963267948959 0 0</pose>
+      <parent>right_HandFingerTwoKnuckleOneLink</parent>
+      <child>right_HandFingerTwoKnuckleTwoLink</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>2.443388889</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='right_HandFingerTwoKnuckleTwoLink'>
+      <pose relative_to='right_HandFingerTwoKnuckleTwoJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.031719999999999998 0.00107 -0.00058600000000000004 0 0 0</pose>
+        <mass>0.057957000000000002</mass>
+        <inertia>
+          <ixx>4.6099999999999999e-06</ixx>
+          <ixy>2.9999999999999997e-08</ixy>
+          <ixz>1.64e-06</ixz>
+          <iyy>3.5899999999999998e-05</iyy>
+          <iyz>4.0000000000000001e-08</iyz>
+          <izz>3.6820000000000003e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_HandFingerTwoKnuckleTwoLink_collision'>
+        <pose>0.045531850308199999 0 0 0 0 0.042407715357800004</pose>
+        <geometry>
+          <box>
+            <size>0.0572708845139 0.025990553200199999 0.0224001407623</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_HandFingerTwoKnuckleTwoLink_visual'>
+        <pose>0 0 0 3.1415926535897931 1.5707963267948966 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/secondFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <joint name='right_HandFingerTwoKnuckleThreeJoint' type='revolute'>
+      <pose relative_to='right_HandFingerTwoKnuckleTwoLink'>0.070000000000000007 0 0 0 0 -0.69045225200000004</pose>
+      <parent>right_HandFingerTwoKnuckleTwoLink</parent>
+      <child>right_HandFingerTwoKnuckleThreeLink</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.83773333299999997</upper>
+          <effort>2</effort>
+          <velocity>3.27</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.20000000000000001</erp>
+          </limit>
+          <provide_feedback>true</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='right_HandFingerTwoKnuckleThreeLink'>
+      <pose relative_to='right_HandFingerTwoKnuckleThreeJoint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.01970974 0.0018201599999999999 0.00020040999999999999 0 0 0</pose>
+        <mass>0.034217810000000001</mass>
+        <inertia>
+          <ixx>4.6099999999999999e-06</ixx>
+          <ixy>2.9999999999999997e-08</ixy>
+          <ixz>1.64e-06</ixz>
+          <iyy>3.5899999999999998e-05</iyy>
+          <iyz>4.0000000000000001e-08</iyz>
+          <izz>3.6820000000000003e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_HandFingerTwoKnuckleThreeLink_collision'>
+        <pose>0.022046357393299999 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.045631229877499999 0.0218328088522 0.022742033004799999</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='right_HandFingerTwoKnuckleThreeLink_collision_1'>
+        <pose>0.046044960618000001 0.001 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.012090086937</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_HandFingerTwoKnuckleThreeLink_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://velma_description/meshes/barrett_hand/thirdFingerLink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.875 0.875 0.875 1</diffuse>
+          <ambient>0.875 0.875 0.875 1</ambient>
+        </material>
+      </visual>
+      <gravity>false</gravity>
+      <self_collide>true</self_collide>
+    </link>
+    <plugin name='gz_ros2_control::GazeboSimROS2ControlPlugin' filename='libgz_ros2_control-system.so'>
+      <parameters>/home/dseredyn/ws_velma_new/install/velma_moveit_config/share/velma_moveit_config/config/ros2_controllers.yaml</parameters>
+      <controller_manager_name>controller_manager</controller_manager_name>
+    </plugin>
+    <frame name='head_bounding_sphere_joint' attached_to='torso_base'>
+      <pose>0 0 0.029999999999999999 0 0 0</pose>
+    </frame>
+    <frame name='head_bounding_sphere' attached_to='head_bounding_sphere_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='head_pan_motor_joint' attached_to='head_base'>
+      <pose>0 0 0.025000000000000001 0 0 0</pose>
+    </frame>
+    <frame name='head_pan_motor' attached_to='head_pan_motor_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='head_kinect_rgb_optical_frame_joint' attached_to='head_kinect_rgb_link'>
+      <pose>0 0 0 -1.5700000000000001 -5.5511151231257827e-17 -1.5700000000000001</pose>
+    </frame>
+    <frame name='head_kinect_rgb_optical_frame' attached_to='head_kinect_rgb_optical_frame_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='head_kinect_rgb_joint' attached_to='head_tilt_link'>
+      <pose>0.062644000000000005 0.22458 0.020223000000000001 -1.5526999999999997 0.015593000000000025 -0.094166000000000041</pose>
+    </frame>
+    <frame name='head_kinect_rgb_link' attached_to='head_kinect_rgb_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='stereo_left_optical_frame_joint' attached_to='stereo_left_link'>
+      <pose>0 0 0 -1.5700000000000001 -5.5511151231257827e-17 -1.5700000000000001</pose>
+    </frame>
+    <frame name='stereo_left_optical_frame' attached_to='stereo_left_optical_frame_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='stereo_right_optical_frame_joint' attached_to='stereo_right_link'>
+      <pose>0 0 0 -1.5700000000000001 -5.5511151231257827e-17 -1.5700000000000001</pose>
+    </frame>
+    <frame name='stereo_right_optical_frame' attached_to='stereo_right_optical_frame_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='stereo_right_joint' attached_to='stereo_left_link'>
+      <pose>0.0039763999999999997 -0.090443999999999997 -0.00065625000000000004 -0.0011008999999999999 0.016076000000000014 0.0072743000000000061</pose>
+    </frame>
+    <frame name='stereo_right_link' attached_to='stereo_right_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='stereo_left_joint' attached_to='head_tilt_link'>
+      <pose>0.042423672830000002 0.21638820650000001 -0.060061075790000001 -1.5728707279228631 0.006511878462630797 -0.049920158256070747</pose>
+    </frame>
+    <frame name='stereo_left_link' attached_to='stereo_left_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='head_tilt_joint_dummy' attached_to='head_tilt_link_dummy'>
+      <pose>0 0 0 1.5707963267948959 0 0</pose>
+    </frame>
+    <frame name='head_tilt_link' attached_to='head_tilt_joint_dummy'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='head_base_joint' attached_to='torso_link0'>
+      <pose>0.010500000000000001 -0.001 1.3117000000000001 0.00040339000000000016 -0.0062724000000000026 -0.048944000000000001</pose>
+    </frame>
+    <frame name='head_base' attached_to='head_base_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='torso_link0_left_arm_base_joint' attached_to='torso_link0'>
+      <pose>-0.00059999999999999995 -0.001311324 1.1733499999999999 0.00087013424996696829 1.0475048897873585 1.572425482653163</pose>
+    </frame>
+    <frame name='calib_left_arm_base_link' attached_to='torso_link0_left_arm_base_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='left_gripper_mount_joint' attached_to='left_arm_ee_link'>
+      <pose>0 0 0 0 0 3.1415926535897931</pose>
+    </frame>
+    <frame name='left_gripper_mount_link' attached_to='left_gripper_mount_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='left_HandGripJoint' attached_to='left_HandPalmLink'>
+      <pose>0 0 0.12 0 0 0</pose>
+    </frame>
+    <frame name='left_HandGripLink' attached_to='left_HandGripJoint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='left_HandPalmMarkerAJoint' attached_to='left_HandPalmLink'>
+      <pose>0.044499999999999998 0 0.025499999999999998 0 1.5707963267948966 0</pose>
+    </frame>
+    <frame name='left_HandPalmMarkerALink' attached_to='left_HandPalmMarkerAJoint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='left_HandPalmMarkerBJoint' attached_to='left_HandPalmLink'>
+      <pose>0 0.044499999999999998 0.025499999999999998 -1.5707963267948959 0 0</pose>
+    </frame>
+    <frame name='left_HandPalmMarkerBLink' attached_to='left_HandPalmMarkerBJoint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='left_HandPalmMarkerCJoint' attached_to='left_HandPalmLink'>
+      <pose>-0.044499999999999998 0 0.025499999999999998 0 -1.5707963267948966 0</pose>
+    </frame>
+    <frame name='left_HandPalmMarkerCLink' attached_to='left_HandPalmMarkerCJoint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='left_HandPalmMarkerDJoint' attached_to='left_HandPalmLink'>
+      <pose>0 -0.044499999999999998 0.025499999999999998 1.5707963267948959 0 0</pose>
+    </frame>
+    <frame name='left_HandPalmMarkerDLink' attached_to='left_HandPalmMarkerDJoint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='left_HandPalmJoint' attached_to='left_FtSensorLink'>
+      <pose>0 0 0.0050000000000000001 0 0 3.1415926535897931</pose>
+    </frame>
+    <frame name='left_HandPalmLink' attached_to='left_HandPalmJoint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='left_arm_ee_joint' attached_to='left_arm_7_link'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='left_arm_ee_link' attached_to='left_arm_ee_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='torso_link0_right_arm_base_joint' attached_to='torso_link0'>
+      <pose>-0.00040000000000000002 -0.00088867600000000003 1.1733499999999999 -0.00044935495417229999 -1.0474715456733605 1.5704709495574307</pose>
+    </frame>
+    <frame name='calib_right_arm_base_link' attached_to='torso_link0_right_arm_base_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_gripper_mount_joint' attached_to='right_arm_ee_link'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_gripper_mount_link' attached_to='right_gripper_mount_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_HandGripJoint' attached_to='right_HandPalmLink'>
+      <pose>0 0 0.12 0 0 0</pose>
+    </frame>
+    <frame name='right_HandGripLink' attached_to='right_HandGripJoint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_HandPalmMarkerAJoint' attached_to='right_HandPalmLink'>
+      <pose>0.044499999999999998 0 0.025499999999999998 0 1.5707963267948966 0</pose>
+    </frame>
+    <frame name='right_HandPalmMarkerALink' attached_to='right_HandPalmMarkerAJoint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_HandPalmMarkerBJoint' attached_to='right_HandPalmLink'>
+      <pose>0 0.044499999999999998 0.025499999999999998 -1.5707963267948959 0 0</pose>
+    </frame>
+    <frame name='right_HandPalmMarkerBLink' attached_to='right_HandPalmMarkerBJoint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_HandPalmMarkerCJoint' attached_to='right_HandPalmLink'>
+      <pose>-0.044499999999999998 0 0.025499999999999998 0 -1.5707963267948966 0</pose>
+    </frame>
+    <frame name='right_HandPalmMarkerCLink' attached_to='right_HandPalmMarkerCJoint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_HandPalmMarkerDJoint' attached_to='right_HandPalmLink'>
+      <pose>0 -0.044499999999999998 0.025499999999999998 1.5707963267948959 0 0</pose>
+    </frame>
+    <frame name='right_HandPalmMarkerDLink' attached_to='right_HandPalmMarkerDJoint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_HandPalmJoint' attached_to='right_FtSensorLink'>
+      <pose>0 0 0.0050000000000000001 0 0 0</pose>
+    </frame>
+    <frame name='right_HandPalmLink' attached_to='right_HandPalmJoint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_arm_ee_joint' attached_to='right_arm_7_link'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='right_arm_ee_link' attached_to='right_arm_ee_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <ros2_control name='FakeSystem' type='system'>
+      <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      </hardware>
+      <joint name='torso_0_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+      <joint name='left_arm_0_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+      <joint name='left_arm_1_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+      <joint name='left_arm_2_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+      <joint name='left_arm_3_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+      <joint name='left_arm_4_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+      <joint name='left_arm_5_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+      <joint name='left_arm_6_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+      <joint name='right_arm_0_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+      <joint name='right_arm_1_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+      <joint name='right_arm_2_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+      <joint name='right_arm_3_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+      <joint name='right_arm_4_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+      <joint name='right_arm_5_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+      <joint name='right_arm_6_joint'>
+        <command_interface name='position'/>
+        <command_interface name='velocity'/>
+        <command_interface name='effort'/>
+        <state_interface name='position'>
+          <param name='initial_value'>0</param>
+        </state_interface>
+        <state_interface name='velocity'/>
+        <state_interface name='effort'/>
+      </joint>
+    </ros2_control>
+  </model>
+</sdf>
