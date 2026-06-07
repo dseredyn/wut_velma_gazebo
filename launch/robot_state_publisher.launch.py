@@ -72,7 +72,8 @@ def generate_launch_description():
             parameters=[{
                 'use_sim_time': use_sim_time,
                 'robot_description': ParameterValue(value=robot_desc, value_type=str),
-                'frame_prefix': PythonExpression(["'", frame_prefix, "/'"])
+                'frame_prefix': PythonExpression(["'", frame_prefix, "/'"]),
+                'publish_frequency': 100.0
             }],
         ),
     ])

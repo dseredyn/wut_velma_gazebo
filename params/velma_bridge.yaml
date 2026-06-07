@@ -12,9 +12,48 @@
   gz_type_name: "gz.msgs.Model"
   direction: GZ_TO_ROS
 
-# gz topic published by Sensors plugin (Camera)
-- ros_topic_name: "camera/camera_info"
-  gz_topic_name: "camera/camera_info"
+# gz topic published by Sensors plugin (RGBD Camera)
+- ros_topic_name: "head_rgbd_camera/camera_info"
+  gz_topic_name: "/head_rgbd_camera/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
+
+- ros_topic_name: "head_rgbd_camera/depth_image"
+  gz_topic_name: "/head_rgbd_camera/depth_image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "head_rgbd_camera/image"
+  gz_topic_name: "/head_rgbd_camera/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "head_rgbd_camera/points"
+  gz_topic_name: "/head_rgbd_camera/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "world/poses"
+  gz_topic_name: "/world/default/pose/info"
+  ros_type_name: "geometry_msgs/msg/PoseArray"
+  gz_type_name: "gz.msgs.Pose_V"
+  direction: GZ_TO_ROS
+
+# /world/default/pose/info@ros_gz_interfaces/msg/EntityPose_V@gz.msgs.Pose_V
+
+# - ros_topic_name: "camera/image_raw"
+#   gz_topic_name: "camera/image_raw"
+#   ros_type_name: "sensor_msgs/msg/CameraInfo"
+#   gz_type_name: "gz.msgs.CameraInfo"
+#   direction: GZ_TO_ROS
+
+# ros2 run ros_gz_bridge parameter_bridge \
+#   /velma/head_rgbd_camera/image@sensor_msgs/msg/Image@gz.msgs.Image \
+#   /velma/head_rgbd_camera/depth_image@sensor_msgs/msg/Image@gz.msgs.Image \
+#   /velma/head_rgbd_camera/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo \
+#   /velma/head_rgbd_camera/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked
+

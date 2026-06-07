@@ -13,6 +13,9 @@ The Package was tested on the following setup:
 
 ## Installation
 
+```bash
+clear && python3 -m colcon build --symlink-install --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo
+```
 
 ## Run
 
@@ -22,9 +25,3 @@ cd ~/ws_wut_velma
 source install/setup.bash
 ros2 launch wut_velma_gazebo empty_world.launch.py
 ```
-
-Convert urdf xacro of the robot to Gazebo model (sdf):
-```bash
-ros2 launch wut_velma_gazebo generate_velma_sdf.launch.py
-```
-

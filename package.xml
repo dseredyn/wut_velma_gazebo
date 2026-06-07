@@ -24,6 +24,9 @@
   <depend>gz_math_vendor</depend>
   <depend>sensor_msgs</depend>
   <depend>tf2</depend>
+  <depend>wut_velma_effort_controller</depend>
+  <depend>wut_gazebo_models</depend>
+  
   <export>
     <build_type>ament_cmake</build_type>
     <gazebo_ros gazebo_model_path="${prefix}/models"/>

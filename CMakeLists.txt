@@ -86,7 +86,7 @@ find_package(gz-plugin REQUIRED)
 #)
 
 #install(DIRECTORY launch models params rviz urdf worlds
-install(DIRECTORY launch models params worlds
+install(DIRECTORY config launch params worlds
   DESTINATION share/${PROJECT_NAME}/
 )
 

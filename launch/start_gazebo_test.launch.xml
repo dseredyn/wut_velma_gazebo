@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<launch>
+
+    <let name="use_sim_time" value="true" />
+
+    <arg
+        name="verbose"
+        default="4"
+        description="Gazebo verbosity level (0-4)." />
+
+    <arg name="initial_controller" default="jnt" description="Initially active controller (jnt, cart)." />
+
+    <let name="jnt_active" value="--activate-as-group"
+        if="$(eval '\'$(var initial_controller)\' == \'jnt\'')"/>
+    <let name="jnt_active" value="--inactive"
+        unless="$(eval '\'$(var initial_controller)\' == \'jnt\'')"/>
+
+    <let name="cart_active" value="--activate-as-group"
+        if="$(eval '\'$(var initial_controller)\' == \'cart\'')"/>
+    <let name="cart_active" value="--inactive"
+        unless="$(eval '\'$(var initial_controller)\' == \'cart\'')"/>
+
+    <!--
+        Python:
+        pkg_velma_description_parent = dirname(get_package_share_directory('velma_description'))
+
+        Jeżeli share velma_description to:
+        <prefix>/share/velma_description
+
+        to parent to:
+        <prefix>/share
+    -->
+    <set_env
+        name="GZ_SIM_RESOURCE_PATH"
+        value="$(find-pkg-prefix velma_description)/share:$(find-pkg-share wut_velma_gazebo)/models:$(env GZ_SIM_RESOURCE_PATH '')" />
+
+    <set_env
+        name="IGN_GAZEBO_RESOURCE_PATH"
+        value="$(find-pkg-prefix velma_description)/share:$(env IGN_GAZEBO_RESOURCE_PATH '')" />
+
+    <set_env
+        name="GZ_SIM_SYSTEM_PLUGIN_PATH"
+        value="$(find-pkg-prefix wut_velma_effort_controller)/lib:$(env GZ_SIM_SYSTEM_PLUGIN_PATH '')" />
+
+    <!-- Gazebo server -->
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+        <arg
+        name="gz_args"
+        value="-r -s -v2 $(find-pkg-share wut_velma_gazebo)/worlds/empty_world.world -v $(var verbose)" />
+        <arg
+        name="on_exit_shutdown"
+        value="true" />
+    </include>
+
+    <!-- Gazebo client -->
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+        <arg
+        name="gz_args"
+        value="-g -v2" />
+    </include>
+
+    <!-- ROS-Gazebo bridge -->
+    <node
+        pkg="ros_gz_bridge"
+        exec="parameter_bridge"
+        output="screen"
+        args="--ros-args -p config_file:=$(find-pkg-share wut_velma_gazebo)/params/velma_bridge.yaml" />
+
+    <!-- Image bridge -->
+    <node
+        pkg="ros_gz_image"
+        exec="image_bridge"
+        output="screen"
+        args="/camera/image_raw" />
+
+    <!-- Robot state publisher -->
+    <include file="$(find-pkg-share wut_velma_gazebo)/launch/robot_state_publisher.launch.py">
+        <arg name="use_sim_time" value="$(var use_sim_time)" />
+    </include>
+
+    <!-- joint_state_broadcaster spawner -->
+    <node
+        pkg="controller_manager"
+        exec="spawner"
+        output="screen"
+        args="joint_state_broadcaster -c /controller_manager" />
+
+<!-- test controllers -->
+    <node pkg="controller_manager"
+            exec="spawner"
+            name="spawner_head_controller"
+            output="screen"
+            args="
+                test_C
+                test_B
+                test_A
+                --activate-as-group
+                --controller-manager /controller_manager
+                --controller-manager-timeout 10
+                --switch-timeout 10"/>
+
+    <!-- activate cascade of regulators -->
+    <node pkg="controller_manager"
+            exec="spawner"
+            name="spawner_arm_cascade"
+            output="screen"
+            args="
+                arms_torso_effort
+                arms_torso_trajectory_controller
+                $(var jnt_active)
+                --controller-manager /controller_manager
+                --controller-manager-timeout 10
+                --switch-timeout 10"/>
+
+    <!-- spawn two inactive cartesian cascade controllers-->
+    <node pkg="controller_manager"
+            exec="spawner"
+            name="spawner_cartesian_cascade_inactive"
+            output="screen"
+            args="
+                computed_cart_torque_controller
+                cartesian_trajectory_generator
+                $(var cart_active)
+                --controller-manager /controller_manager
+                --controller-manager-timeout 10
+                --switch-timeout 10"/>
+
+    <!--
+        Nie używam spawn_velma, zgodnie z komentarzem z Python launch:
+        Do not use URDF spawn:
+        https://github.com/gazebosim/gz-sim/issues/3261
+    -->
+
+    <!-- MoveIt -->
+    <arg name="launch_moveit_rviz" default="true"/>
+
+    <!-- Uruchamia główny węzeł MoveIt: /move_group -->
+    <include file="$(find-pkg-share velma_moveit_config)/launch/move_group.launch.py">
+        <arg name="use_sim_time" value="$(var use_sim_time)"/>
+    </include>
+
+    <!-- Opcjonalnie RViz z MotionPlanning pluginem -->
+    <include
+        if="$(var launch_moveit_rviz)"
+        file="$(find-pkg-share velma_moveit_config)/launch/moveit_rviz.launch.py">
+        <arg name="use_sim_time" value="$(var use_sim_time)"/>
+    </include>
+
+</launch>
