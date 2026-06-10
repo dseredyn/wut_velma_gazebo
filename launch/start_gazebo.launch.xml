@@ -3,6 +3,11 @@
 
     <let name="use_sim_time" value="true" />
 
+    <!-- For solving rendering problems under Virtual Box: use_ogre:=true -->
+    <arg name="use_ogre" default="false" />
+    <let name="render_engine" value="" if="$(eval '\'$(var use_ogre)\' == \'false\'')"/>
+    <let name="render_engine" value="--render-engine ogre" unless="$(eval '\'$(var use_ogre)\' == \'false\'')"/>
+
     <!-- <let name="world_name" value="empty_world.world" /> -->
     <let name="world_name" value="world_table.world" />
 
@@ -49,7 +54,7 @@
     <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
         <arg
         name="gz_args"
-        value="-g -v2" />
+        value="-g -v2 $(var render_engine)" />
     </include>
 
     <!-- ROS-Gazebo bridge -->
@@ -66,72 +71,7 @@
         output="screen"
         args="/camera/image_raw" />
 
-    <!-- Robot state publisher -->
-    <include file="$(find-pkg-share wut_velma_gazebo)/launch/robot_state_publisher.launch.py">
-        <arg name="use_sim_time" value="$(var use_sim_time)" />
-    </include>
-
-    <!-- joint_state_broadcaster spawner -->
-    <node
-        pkg="controller_manager"
-        exec="spawner"
-        output="screen"
-        args="joint_state_broadcaster -c /controller_manager" />
-
-    <!-- activate cascade of regulators -->
-    <node pkg="controller_manager"
-            exec="spawner"
-            name="spawner_arm_cascade"
-            output="screen"
-            args="
-                arms_torso_effort
-                arms_torso_trajectory_controller
-                $(var jnt_active)
-                --controller-manager /controller_manager
-                --controller-manager-timeout 10
-                --switch-timeout 10"/>
-
-    <!-- spawn two inactive cartesian cascade controllers-->
-    <node pkg="controller_manager"
-            exec="spawner"
-            name="spawner_cartesian_cascade_inactive"
-            output="screen"
-            args="
-                computed_cart_torque_controller
-                cartesian_trajectory_generator
-                $(var cart_active)
-                --controller-manager /controller_manager
-                --controller-manager-timeout 10
-                --switch-timeout 10"/>
-
-    <node pkg="controller_manager"
-            exec="spawner"
-            name="spawner_head_hands_controller"
-            output="screen"
-            args="
-                head_controller
-                left_hand_controller
-                right_hand_controller
-                --activate-as-group
-                --controller-manager /controller_manager
-                --controller-manager-timeout 10
-                --switch-timeout 10"/>
-
-    <!-- MoveIt -->
-    <arg name="launch_moveit_rviz" default="true"/>
-
-    <!-- Uruchamia główny węzeł MoveIt: /move_group -->
-    <include file="$(find-pkg-share velma_moveit_config)/launch/move_group.launch.py">
-        <arg name="use_sim_time" value="$(var use_sim_time)"/>
-    </include>
-
-    <!-- Opcjonalnie RViz z MotionPlanning pluginem -->
-    <include
-        if="$(var launch_moveit_rviz)"
-        file="$(find-pkg-share velma_moveit_config)/launch/moveit_rviz.launch.py">
-        <arg name="use_sim_time" value="$(var use_sim_time)"/>
-    </include>
-
+    <!-- Run the node for getting posed of objects from Gazebo Sim. -->
     <node pkg="gazebo_pose_tools" exec="gazebo_pose_service_node" output="screen">
         <param name="use_sim_time" value="$(var use_sim_time)"/>
     </node>

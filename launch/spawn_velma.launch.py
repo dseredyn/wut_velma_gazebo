@@ -92,7 +92,7 @@ def generate_sdf_and_spawn(context, *args, **kwargs):
     print(f"[launch] Generated URDF: {urdf_out}")
     print(f"[launch] Generated SDF:  {sdf_out}")
 
-    # 3. Akcja wykonywana po wygenerowaniu SDF
+    # This launch action used the already-generated SDF
     return [
         Node(
             package="ros_gz_sim",

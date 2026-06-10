@@ -40,7 +40,7 @@ def generate_launch_description():
             output="screen",
         )
 
-    start_system = IncludeLaunchDescription(
+    start_gazebo = IncludeLaunchDescription(
         XMLLaunchDescriptionSource(
             PathJoinSubstitution([
                 FindPackageShare('wut_velma_gazebo'),
@@ -50,18 +50,37 @@ def generate_launch_description():
         )
     )
 
-    spawn_velma = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
+    start_velma = IncludeLaunchDescription(
+        XMLLaunchDescriptionSource(
             PathJoinSubstitution([
                 FindPackageShare('wut_velma_gazebo'),
                 'launch',
-                'spawn_velma.launch.py'
+                'start_velma.launch.xml'
             ])
         )
     )
 
     pkg_velma_moveit_config = get_package_share_directory('velma_moveit_config')
     default_xacro = PathJoinSubstitution([pkg_velma_moveit_config, 'config', 'velma.urdf.xacro'])
+
+    wait_for_clock = ExecuteProcess(
+        cmd=[
+            "bash",
+            "-c",
+            "ros2 topic echo --once /clock > /dev/null"
+        ],
+        output="screen",
+    )
+
+    start_after_clock = RegisterEventHandler(
+        OnProcessExit(
+            target_action=wait_for_clock,
+            on_exit=[
+                LogInfo(msg="Gazebo /clock detected; starting WUT Velma launch file."),
+                start_velma,
+            ],
+        )
+    )
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -78,11 +97,11 @@ def generate_launch_description():
             OnProcessExit(
                 target_action=kill_ruby,
                 on_exit=[
-                    LogInfo(msg='Proces przygotowawczy zakończony, uruchamiam grupę węzłów...'),
-                    start_system,
+                    LogInfo(msg='Starting Gazebo...'),
+                    start_gazebo,
+                    wait_for_clock,
+                    start_after_clock
                 ]
             )
         ),
-
-        spawn_velma
     ])
