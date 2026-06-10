@@ -117,14 +117,6 @@
                 --controller-manager-timeout 10
                 --switch-timeout 10"/>
 
-
-
-    <!--
-        Nie używam spawn_velma, zgodnie z komentarzem z Python launch:
-        Do not use URDF spawn:
-        https://github.com/gazebosim/gz-sim/issues/3261
-    -->
-
     <!-- MoveIt -->
     <arg name="launch_moveit_rviz" default="true"/>
 

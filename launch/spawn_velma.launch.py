@@ -1,4 +1,6 @@
-# Copyright 2019 Open Source Robotics Foundation, Inc.
+#!/usr/bin/env python3
+#
+# Copyright 2019 ROBOTIS CO., LTD.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,146 +13,109 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
+# Authors: Joep Tool, Hyungyu Kim
 
 import os
+import subprocess
+import shlex
+import xacro
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration
+from launch.actions import AppendEnvironmentVariable, DeclareLaunchArgument, ExecuteProcess,\
+    RegisterEventHandler, IncludeLaunchDescription, AppendEnvironmentVariable, LogInfo, \
+    OpaqueFunction
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, TextSubstitution
 from launch_ros.actions import Node
-from launch.actions import OpaqueFunction
-import time
+from launch.event_handlers import OnProcessExit
 
-import subprocess
+from launch_ros.substitutions import FindPackagePrefix, FindPackageShare
+from launch_xml.launch_description_sources import XMLLaunchDescriptionSource
 
-from launch.actions import TimerAction
 
-def _try_spawn(context, *args, **kwargs):
-    #world = LaunchConfiguration('world_name').perform(context)
-    world = 'default'
-    # entity = LaunchConfiguration('entity_name').perform(context)
-    entity = 'velma'
-    # Serwisy Gazebo Transport (nie ROS):
-    s1 = f"/world/{world}/create"
-    s2 = f"/world/{world}/create_multiple"
+def generate_sdf_and_spawn(context, *args, **kwargs):
+    xacro_file = LaunchConfiguration("xacro_file").perform(context)
+    #xacro_args = LaunchConfiguration("xacro_args").perform(context).strip()
+    sdf_out    = '/tmp/wut_velma.sdf'
+    urdf_out = '/tmp/wut_velma.urdf'
+    robot_name = 'velma'
 
-    try:
-        r = subprocess.run(
-            ["gz", "service", "-l"],
-            capture_output=True, text=True, timeout=10.0
-        )
-        print('*** captured output')
-        out = r.stdout
-    except Exception as e:
-        # print(e)
-        out = ""
+    use_sim_time = LaunchConfiguration("use_sim_time").perform(context)
 
-    # print(f'*** {out}')
+    # 1. urdf.xacro -> URDF
+    doc = xacro.process_file(
+        xacro_file,
+        mappings={
+            "use_sim_time": use_sim_time,
+        },
+    )
 
-    if (s1 in out) or (s2 in out):
-        print('*** spawn_velma.launch.py: spawning')
-        # GOTOWE -> dopiero teraz startujemy Node(create)
-        return [Node(
+    urdf_xml = doc.toprettyxml(indent="  ")
+
+    with open(urdf_out, "w") as f:
+        f.write(urdf_xml)
+
+    # 2. URDF -> SDF
+    result = subprocess.run(
+        [
+            "gz",
+            "sdf",
+            "-p",
+            str(urdf_out),
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+
+    # Save the generated SDF
+    with open(sdf_out, "w") as f:
+        f.write(result.stdout)
+
+    result = subprocess.run(
+        [
+            'sed',
+            '--follow-symlinks',
+            '-i',
+            f's/<model name=\'velma\'>/<model name=\'velma\'>\\n    <self_collide>true<\\/self_collide>/g',
+            f'{sdf_out}',
+        ],
+        check=True,
+        # capture_output=True,
+        text=True,
+    )
+
+    # f'sed --follow-symlinks -i "s/<model name=\'velma\'>/<model name=\'velma\'>\\n    <self_collide>true<\\/self_collide>/g" {sdf_out}'
+    
+    print(f"[launch] Generated URDF: {urdf_out}")
+    print(f"[launch] Generated SDF:  {sdf_out}")
+
+    # 3. Akcja wykonywana po wygenerowaniu SDF
+    return [
+        Node(
             package="ros_gz_sim",
             executable="create",
-            output="screen",
             arguments=[
-                "-world", world,
-                "-name", entity,
-                "-topic", "robot_description",
-                # "-x", LaunchConfiguration('x').perform(context),
-                # "-y", LaunchConfiguration('y').perform(context),
-                # "-z", LaunchConfiguration('z').perform(context),
-                # "-R", LaunchConfiguration('roll').perform(context),
-                # "-P", LaunchConfiguration('pitch').perform(context),
-                # "-Y", LaunchConfiguration('yaw').perform(context),
+                "-world", "default",
+                "-file", str(sdf_out),
+                "-name", robot_name,
+                "-allow_renaming", "false",
             ],
-        )]
-    print('*** spawn_velma.launch.py: waiting for spawn service - retrying...')
-
-    # Not ready, do not block, try again in 1 second
-    return [TimerAction(
-        period=1.0,
-        actions=[OpaqueFunction(function=_try_spawn)]
-    )]
-
-
+            output="screen",
+        )
+    ]
 
 def generate_launch_description():
-    # Get the urdf file
-    # TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
-    # model_folder = 'turtlebot3_' + TURTLEBOT3_MODEL
-    # urdf_path = os.path.join(
-    #     get_package_share_directory('turtlebot3_gazebo'),
-    #     'models',
-    #     model_folder,
-    #     'model.sdf'
-    # )
+    pkg_velma_moveit_config = get_package_share_directory('velma_moveit_config')
+    default_xacro = PathJoinSubstitution([pkg_velma_moveit_config, 'config', 'velma.urdf.xacro'])
+    convert_to_sdf_and_spawn = OpaqueFunction(function=generate_sdf_and_spawn)
 
-    # Launch configuration variables specific to simulation
-    # x_pose = LaunchConfiguration('x_pose', default='0.0')
-    # y_pose = LaunchConfiguration('y_pose', default='0.0')
-
-    # Declare the launch arguments
-    # declare_x_position_cmd = DeclareLaunchArgument(
-    #     'x_pose', default_value='0.0',
-    #     description='Specify namespace of the robot')
-
-    # declare_y_position_cmd = DeclareLaunchArgument(
-    #     'y_pose', default_value='0.0',
-    #     description='Specify namespace of the robot')
-
-#ros2 service wait /world/{w}/create_multiple
-
-    # start_gazebo_ros_spawner_cmd = Node(
-    #     package='ros_gz_sim',
-    #     executable='create',
-    #     arguments=[
-    #         '-name', 'velma',
-    #         #'-file', urdf_path,
-    #         '-topic', 'robot_description',
-    #         # '-x', x_pose,
-    #         # '-y', y_pose,
-    #         # '-z', '0.01'
-    #     ],
-    #     output='screen',
-    # )
-
-    bridge_params = os.path.join(
-        get_package_share_directory('wut_velma_gazebo'),
-        'params',
-        'velma_bridge.yaml'
-    )
-
-    start_gazebo_ros_bridge_cmd = Node(
-        package='ros_gz_bridge',
-        executable='parameter_bridge',
-        arguments=[
-            '--ros-args',
-            '-p',
-            f'config_file:={bridge_params}',
-        ],
-        output='screen',
-    )
-
-    start_gazebo_ros_image_bridge_cmd = Node(
-        package='ros_gz_image',
-        executable='image_bridge',
-        arguments=['/camera/image_raw'],
-        output='screen',
-    )
-    ld = LaunchDescription()
-
-    # Declare the launch options
-    # ld.add_action(declare_x_position_cmd)
-    # ld.add_action(declare_y_position_cmd)
-
-    # Add any conditioned actions
-    ld.add_action(TimerAction(period=0.1, actions=[OpaqueFunction(function=_try_spawn)]))
-    # ld.add_action(OpaqueFunction(function=spawn_when_gz_ready))
-    # ld.add_action(start_gazebo_ros_spawner_cmd)
-    ld.add_action(start_gazebo_ros_bridge_cmd)
-    ld.add_action(start_gazebo_ros_image_bridge_cmd) # if TURTLEBOT3_MODEL != 'burger' else None
-
-    return ld
+    return LaunchDescription([
+        DeclareLaunchArgument(
+            "xacro_file", default_value=default_xacro,
+            description="Absolute path to URDF Xacro file.",
+        ),
+        convert_to_sdf_and_spawn,
+    ])
