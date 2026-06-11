@@ -16,10 +16,10 @@
         unless="$(eval '\'$(var initial_controller)\' == \'cart\'')"/>
 
     <!-- Spawn Velma -->
-    <include file="$(find-pkg-share wut_velma_gazebo)/launch/spawn_velma.launch.py"/>
+    <include file="$(find-pkg-share wut_velma_gazebo)/launch/internal/spawn_velma.launch.py"/>
 
     <!-- Robot state publisher -->
-    <include file="$(find-pkg-share wut_velma_gazebo)/launch/robot_state_publisher.launch.py">
+    <include file="$(find-pkg-share wut_velma_gazebo)/launch/internal/robot_state_publisher.launch.py">
         <arg name="use_sim_time" value="true" />
     </include>
 

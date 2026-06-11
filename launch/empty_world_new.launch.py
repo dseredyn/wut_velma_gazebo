@@ -45,6 +45,7 @@ def generate_launch_description():
             PathJoinSubstitution([
                 FindPackageShare('wut_velma_gazebo'),
                 'launch',
+                'internal',
                 'start_gazebo.launch.xml'
             ])
         )
@@ -55,6 +56,7 @@ def generate_launch_description():
             PathJoinSubstitution([
                 FindPackageShare('wut_velma_gazebo'),
                 'launch',
+                'internal',
                 'start_velma.launch.xml'
             ])
         )
