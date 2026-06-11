@@ -7,7 +7,7 @@
     <arg name="run_gui" default="true" />
 
     <!-- <let name="world_name" value="empty_world.world" /> -->
-    <arg name="world_name" default="world_table.world" />
+    <arg name="world_name"/>
 
     <arg name="verbose" default="4" description="Gazebo verbosity level (0-4)." />
 

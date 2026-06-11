@@ -40,6 +40,18 @@ def generate_launch_description():
             output="screen",
         )
 
+    world_name = LaunchConfiguration("world_name")
+    default_world_name = 'world_table.world'
+
+    old_ogre = LaunchConfiguration("old_ogre")
+    default_old_ogre = 'false'
+
+    run_gui = LaunchConfiguration("run_gui")
+    default_run_gui = 'true'
+
+    verbose = LaunchConfiguration("verbose")
+    default_verbose = '4'
+
     start_gazebo = IncludeLaunchDescription(
         XMLLaunchDescriptionSource(
             PathJoinSubstitution([
@@ -48,7 +60,13 @@ def generate_launch_description():
                 'internal',
                 'start_gazebo.launch.xml'
             ])
-        )
+        ),
+        launch_arguments={
+            'world_name':world_name,
+            'old_ogre':old_ogre,
+            'run_gui':run_gui,
+            'verbose':verbose
+        }.items()
     )
 
     start_velma = IncludeLaunchDescription(
@@ -92,6 +110,22 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "xacro_file", default_value=default_xacro,
             description="Absolute path to URDF Xacro file.",
+        ),
+        DeclareLaunchArgument(
+            "world_name", default_value=default_world_name,
+            description="File name for the Gazebo Sim world.",
+        ),
+        DeclareLaunchArgument(
+            "old_ogre", default_value=default_old_ogre,
+            description="Use the old Ogre render engine in Gazebo Client (for compatibility with Virtual Box).",
+        ),
+        DeclareLaunchArgument(
+            "run_gui", default_value=default_run_gui,
+            description="Run Gazebo Client at startup.",
+        ),
+        DeclareLaunchArgument(
+            "verbose", default_value=default_verbose,
+            description="Gazebo verbosity level (0-4).",
         ),
         kill_ruby,
 

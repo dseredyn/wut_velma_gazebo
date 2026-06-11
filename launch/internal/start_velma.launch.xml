@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <launch>
 
-    <let name="use_sim_time" value="true" />
-
     <arg name="initial_controller" default="jnt" description="Initially active controller (jnt, cart)." />
 
     <let name="jnt_active" value="--activate-as-group"
@@ -74,14 +72,14 @@
 
     <!-- Run MoveIt: /move_group -->
     <include file="$(find-pkg-share velma_moveit_config)/launch/move_group.launch.py">
-        <arg name="use_sim_time" value="$(var use_sim_time)"/>
+        <arg name="use_sim_time" value="true"/>
     </include>
 
     <!-- Run RViz with the specified config file. -->
     <include
         if="$(var launch_moveit_rviz)"
         file="$(find-pkg-share velma_moveit_config)/launch/moveit_rviz.launch.py">
-        <arg name="use_sim_time" value="$(var use_sim_time)"/>
+        <arg name="use_sim_time" value="true"/>
     </include>
 
 </launch>
