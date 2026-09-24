@@ -16,24 +16,14 @@
 #
 # Authors: Joep Tool, Hyungyu Kim
 
-import os
 import subprocess
-import shlex
 import xacro
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import AppendEnvironmentVariable, DeclareLaunchArgument, ExecuteProcess,\
-    RegisterEventHandler, IncludeLaunchDescription, AppendEnvironmentVariable, LogInfo, \
-    OpaqueFunction
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, TextSubstitution
+from launch.actions import DeclareLaunchArgument, OpaqueFunction
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
-from launch.event_handlers import OnProcessExit
-
-from launch_ros.substitutions import FindPackagePrefix, FindPackageShare
-from launch_xml.launch_description_sources import XMLLaunchDescriptionSource
-
 
 def generate_sdf_and_spawn(context, *args, **kwargs):
     xacro_file = LaunchConfiguration("xacro_file").perform(context)

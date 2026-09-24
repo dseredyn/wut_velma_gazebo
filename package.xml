@@ -27,6 +27,8 @@
   <depend>wut_velma_effort_controller</depend>
   <depend>wut_gazebo_models</depend>
   
+  <exec_depend>ros2launch</exec_depend>
+  
   <export>
     <build_type>ament_cmake</build_type>
     <gazebo_ros gazebo_model_path="${prefix}/models"/>

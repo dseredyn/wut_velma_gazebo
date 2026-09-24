@@ -3,6 +3,10 @@
 
     <arg name="initial_controller" default="jnt" description="Initially active controller (jnt, cart)." />
 
+    <arg name="use_moveit" default="true" />
+
+    <let name="use_cart" value="false" />
+
     <let name="jnt_active" value="--activate-as-group"
         if="$(eval '\'$(var initial_controller)\' == \'jnt\'')"/>
     <let name="jnt_active" value="--inactive"
@@ -14,10 +18,10 @@
         unless="$(eval '\'$(var initial_controller)\' == \'cart\'')"/>
 
     <!-- Spawn Velma -->
-    <include file="$(find-pkg-share wut_velma_gazebo)/launch/internal/spawn_velma.launch.py"/>
+    <include file="$(find-pkg-share wut_velma_gazebo)/launch/internal/_spawn_velma.launch.py"/>
 
     <!-- Robot state publisher -->
-    <include file="$(find-pkg-share wut_velma_gazebo)/launch/internal/robot_state_publisher.launch.py">
+    <include file="$(find-pkg-share wut_velma_gazebo)/launch/internal/_robot_state_publisher.launch.py">
         <arg name="use_sim_time" value="true" />
     </include>
 
@@ -52,7 +56,8 @@
                 $(var cart_active)
                 --controller-manager /controller_manager
                 --controller-manager-timeout 10
-                --switch-timeout 10"/>
+                --switch-timeout 10"
+            if="$(var use_cart)" />
 
     <node pkg="controller_manager"
             exec="spawner"
@@ -71,7 +76,7 @@
     <arg name="launch_moveit_rviz" default="true"/>
 
     <!-- Run MoveIt: /move_group -->
-    <include file="$(find-pkg-share velma_moveit_config)/launch/move_group.launch.py">
+    <include file="$(find-pkg-share velma_moveit_config)/launch/move_group.launch.py" if="$(var use_moveit)">
         <arg name="use_sim_time" value="true"/>
     </include>
 

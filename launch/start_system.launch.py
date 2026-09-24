@@ -18,27 +18,43 @@
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import AppendEnvironmentVariable, DeclareLaunchArgument, ExecuteProcess,\
-    RegisterEventHandler, IncludeLaunchDescription, AppendEnvironmentVariable, LogInfo, \
-    OpaqueFunction
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, TextSubstitution
-from launch_ros.actions import Node
+from launch.actions import DeclareLaunchArgument, ExecuteProcess,\
+    RegisterEventHandler, IncludeLaunchDescription, LogInfo
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch.event_handlers import OnProcessExit
 
-from launch_ros.substitutions import FindPackagePrefix, FindPackageShare
+from launch_ros.substitutions import FindPackageShare
 from launch_xml.launch_description_sources import XMLLaunchDescriptionSource
-from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
-    cmd_kill_ruby = (
-        f'echo "killing all ruby processes to terminate Gazebo server"'
-        f' && pkill -9 ruby'
+    # cmd_kill_ruby = (
+    #     f'echo "killing all ruby processes to terminate Gazebo server"'
+    #     f' && pkill -9 ruby'
+    # )
+    # kill_ruby = ExecuteProcess(
+    #         cmd=["bash", "-lc", cmd_kill_ruby],
+    #         output="screen",
+    #     )
+
+    cleanup = ExecuteProcess(
+        name="kill_gazebo_leftovers",
+        output="screen",
+        shell=True,
+        cmd=[[
+            "bash -lc '"
+            "set +e; "
+            "PATTERN=\"[g]z sim|[g]z-sim-server|[g]z-sim-gui|ruby.*[g]z.*sim|[g]zserver|[g]zclient\"; "
+            "echo \"Cleaning Gazebo leftovers...\"; "
+            "pgrep -af \"$PATTERN\" || true; "
+            "pkill -TERM -f \"$PATTERN\" || true; "
+            "sleep 2; "
+            "if pgrep -f \"$PATTERN\" > /dev/null; then "
+            "  pkill -KILL -f \"$PATTERN\" || true; "
+            "fi; "
+            "echo \"Cleanup finished.\""
+            "'"
+        ]],
     )
-    kill_ruby = ExecuteProcess(
-            cmd=["bash", "-lc", cmd_kill_ruby],
-            output="screen",
-        )
 
     world_name = LaunchConfiguration("world_name")
     default_world_name = 'world_table.world'
@@ -52,13 +68,15 @@ def generate_launch_description():
     verbose = LaunchConfiguration("verbose")
     default_verbose = '4'
 
+    use_moveit = LaunchConfiguration("use_moveit")
+
     start_gazebo = IncludeLaunchDescription(
         XMLLaunchDescriptionSource(
             PathJoinSubstitution([
                 FindPackageShare('wut_velma_gazebo'),
                 'launch',
                 'internal',
-                'start_gazebo.launch.xml'
+                '_start_gazebo.launch.xml'
             ])
         ),
         launch_arguments={
@@ -75,9 +93,12 @@ def generate_launch_description():
                 FindPackageShare('wut_velma_gazebo'),
                 'launch',
                 'internal',
-                'start_velma.launch.xml'
+                '_start_velma.launch.xml'
             ])
-        )
+        ),
+        launch_arguments={
+            'use_moveit':use_moveit,
+        }.items()
     )
 
     pkg_velma_moveit_config = get_package_share_directory('velma_moveit_config')
@@ -127,11 +148,15 @@ def generate_launch_description():
             "verbose", default_value=default_verbose,
             description="Gazebo verbosity level (0-4).",
         ),
-        kill_ruby,
+        DeclareLaunchArgument(
+            "use_moveit", default_value='true',
+            description="Use sim time",
+        ),
+        cleanup,
 
         RegisterEventHandler(
             OnProcessExit(
-                target_action=kill_ruby,
+                target_action=cleanup,
                 on_exit=[
                     LogInfo(msg='Starting Gazebo...'),
                     start_gazebo,
