@@ -27,15 +27,6 @@ from launch_ros.substitutions import FindPackageShare
 from launch_xml.launch_description_sources import XMLLaunchDescriptionSource
 
 def generate_launch_description():
-    # cmd_kill_ruby = (
-    #     f'echo "killing all ruby processes to terminate Gazebo server"'
-    #     f' && pkill -9 ruby'
-    # )
-    # kill_ruby = ExecuteProcess(
-    #         cmd=["bash", "-lc", cmd_kill_ruby],
-    #         output="screen",
-    #     )
-
     cleanup = ExecuteProcess(
         name="kill_gazebo_leftovers",
         output="screen",
@@ -57,7 +48,7 @@ def generate_launch_description():
     )
 
     world_name = LaunchConfiguration("world_name")
-    default_world_name = 'world_table.world'
+    default_world_name = 'empty_world.world'
 
     old_ogre = LaunchConfiguration("old_ogre")
     default_old_ogre = 'false'
