@@ -1,8 +1,5 @@
 # wut_velma_gazebo
 
-## Contents
-
-
 ## Dependencies
 
 The Package was tested on the following setup:
@@ -14,14 +11,18 @@ The Package was tested on the following setup:
 ## Installation
 
 ```bash
-clear && python3 -m colcon build --symlink-install --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo
+mkdir -p ws_velma/src
+cd ws_velma
+wget https://raw.githubusercontent.com/dseredyn/wut_velma_gazebo/refs/heads/main/workspace_def/workspace.repos
+vcs import src < workspace.repos
+source /opt/ros/jazzy/setup.bash
+python3 -m colcon build --symlink-install --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo
 ```
 
 ## Run
 
 Run Simulation:
 ```bash
-cd ~/ws_wut_velma
 source install/setup.bash
-ros2 launch wut_velma_gazebo empty_world.launch.py
+ros2 launch wut_velma_gazebo start_system.launch.py world:=empty.world
 ```
