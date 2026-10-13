@@ -1,0 +1,21 @@
+repositories:
+  gazebo_pose:
+    type: git
+    url: https://github.com/dseredyn/gazebo_pose.git
+    version: main
+  wut_gazebo_models:
+    type: git
+    url: https://github.com/dseredyn/wut_gazebo_models.git
+    version: main
+  velma_robot:
+    type: git
+    url: https://github.com/RCPRG-ros-pkg/velma_robot.git
+    version: ros2
+  wut_velma_effort_controller:
+    type: git
+    url: https://github.com/dseredyn/wut_velma_effort_controller.git
+    version: main
+  wut_velma_gazebo:
+    type: git
+    url: https://github.com/dseredyn/wut_velma_gazebo.git
+    version: main

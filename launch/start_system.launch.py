@@ -47,8 +47,8 @@ def generate_launch_description():
         ]],
     )
 
-    world_name = LaunchConfiguration("world_name")
-    default_world_name = 'empty_world.world'
+    world = LaunchConfiguration("world")
+    default_world = 'empty.world'
 
     old_ogre = LaunchConfiguration("old_ogre")
     default_old_ogre = 'false'
@@ -71,7 +71,7 @@ def generate_launch_description():
             ])
         ),
         launch_arguments={
-            'world_name':world_name,
+            'world_name':world,
             'old_ogre':old_ogre,
             'run_gui':run_gui,
             'verbose':verbose
@@ -124,7 +124,7 @@ def generate_launch_description():
             description="Absolute path to URDF Xacro file.",
         ),
         DeclareLaunchArgument(
-            "world_name", default_value=default_world_name,
+            "world", default_value=default_world,
             description="File name for the Gazebo Sim world.",
         ),
         DeclareLaunchArgument(

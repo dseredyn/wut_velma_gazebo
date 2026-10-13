@@ -2,15 +2,13 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>wut_velma_gazebo</name>
-  <version>2.3.7</version>
+  <version>1.0.0</version>
   <description>
-    Gazebo simulation package for the TurtleBot3
+    Gazebo simulation package for the WUT Velma
   </description>
   <maintainer email="dawid.seredynski@pw.edu.pl">Dawid Seredyński</maintainer>
   <license>Apache 2.0</license>
-  <!-- <url type="website">TODO</url> -->
   <url type="repository">https://github.com/dseredyn/wut_velma_gazebo</url>
-  <!-- <url type="bugtracker">TODO</url> -->
   <author email="dawid.seredynski@pw.edu.pl">Dawid Seredyński</author>
   <buildtool_depend>ament_cmake</buildtool_depend>
   <depend>geometry_msgs</depend>

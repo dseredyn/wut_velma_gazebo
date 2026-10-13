@@ -48,56 +48,18 @@ find_package(gz-plugin REQUIRED)
 #  ${GZ_SIM_INCLUDE_DIRS}
 #)
 
-#set(EXEC_NAME "turtlebot3_drive")
-
-#add_executable(${EXEC_NAME} src/turtlebot3_drive.cpp)
-#target_link_libraries(${EXEC_NAME}
-#  ${geometry_msgs_TARGETS}
-#  ${nav_msgs_TARGETS}
-#  ${sensor_msgs_TARGETS}
-#  rclcpp::rclcpp
-#  tf2::tf2
-#)
-
-#set(OBSTACLE_LIBS
-#  obstacles
-#  obstacle1
-#  obstacle2
-#)
-
-#foreach(lib ${OBSTACLE_LIBS})
-#  add_library(${lib} SHARED src/${lib}.cpp)
-#  target_link_libraries(${lib}
-#    PUBLIC
-#    gz-sim::gz-sim
-#    gz-math::gz-math
-#  )
-#endforeach()
 
 ################################################################################
 # Install
 ################################################################################
-#install(TARGETS
-#  ${EXEC_NAME}
-#  obstacles
-#  obstacle1
-#  obstacle2
-#  DESTINATION lib/${PROJECT_NAME}
-#)
 
-#install(DIRECTORY launch models params rviz urdf worlds
 install(DIRECTORY launch params worlds
   DESTINATION share/${PROJECT_NAME}/
 )
 
-#install(DIRECTORY include/
-#  DESTINATION include/
-#)
-
 ################################################################################
 # Macro for ament package
 ################################################################################
-#ament_export_include_directories(include)
 ament_export_dependencies(
   gazebo_ros_pkgs
   geometry_msgs
