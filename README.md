@@ -13,8 +13,7 @@ The Package was tested on the following setup:
 ```bash
 mkdir -p ws_velma/src
 cd ws_velma
-wget https://raw.githubusercontent.com/dseredyn/wut_velma_gazebo/refs/heads/main/workspace_def/workspace.repos
-vcs import src < workspace.repos
+vcs import --input https://raw.githubusercontent.com/dseredyn/wut_velma_gazebo/refs/heads/main/workspace_def/workspace.repos src
 source /opt/ros/jazzy/setup.bash
 python3 -m colcon build --symlink-install --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo
 ```
