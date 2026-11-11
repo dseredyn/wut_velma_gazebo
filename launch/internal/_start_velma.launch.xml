@@ -1,11 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
-    <arg name="initial_controller" default="jnt" description="Initially active controller (jnt, cart)." />
-
+    <arg name="initial_controller" default="cart" description="Initially active controller (jnt, cart)." />
     <arg name="use_moveit" default="true" />
-
-    <let name="use_cart" value="false" />
+    <let name="use_cart" value="true" />
 
     <let name="jnt_active" value="--activate-as-group"
         if="$(eval '\'$(var initial_controller)\' == \'jnt\'')"/>
@@ -32,32 +30,32 @@
         output="screen"
         args="joint_state_broadcaster -c /controller_manager" />
 
-    <!-- activate cascade of regulators -->
+    <!-- Load cascade of regulators for joint impedance -->
     <node pkg="controller_manager"
             exec="spawner"
             name="spawner_arm_cascade"
             output="screen"
             args="
-                arms_torso_effort
-                arms_torso_trajectory_controller
+                arms_torso_effort_jnt
+                arms_torso_trajectory_controller_jnt
                 $(var jnt_active)
                 --controller-manager /controller_manager
                 --controller-manager-timeout 10
                 --switch-timeout 10"/>
 
-    <!-- spawn two inactive cartesian cascade controllers-->
+    <!-- Load regulator for Cartesian impedance -->
     <node pkg="controller_manager"
             exec="spawner"
             name="spawner_cartesian_cascade_inactive"
             output="screen"
             args="
-                computed_cart_torque_controller
-                cartesian_trajectory_generator
+                cartesian_controller
                 $(var cart_active)
                 --controller-manager /controller_manager
                 --controller-manager-timeout 10
                 --switch-timeout 10"
             if="$(var use_cart)" />
+
 
     <node pkg="controller_manager"
             exec="spawner"
